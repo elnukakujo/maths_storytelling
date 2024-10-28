@@ -7,6 +7,9 @@ Empirical Study on Teaching Math through Storytelling between LLMs and Humans on
 - Each concept have a folder of its own located in data/.
 
 ## TODOS
+- [ ] Read the LLMs better than NLP article to hide better true purpose of study
+- [ ] Use graeco latine square to better define randomization of stories
+- [ ] Create docusign fo consent form
 - [ ] Choose which story when multiple in one .txt
 - [ ] Verify exercises
 - [ ] Screening test
