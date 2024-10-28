@@ -1,0 +1,5 @@
+In a mystical land, a treasure seeker wished to retrieve gold rumored to be hidden atop a mountain. The exact spot was unknown, and climbing randomly upward was risky. To find the optimal path to ascend, given by the route with the steepest climb, she used an ancient technique that mirrored the concept of the gradient.
+
+Starting from a random point x^(0), she needed the gradient—the rate at which the height h(x) changed with her position. To approximate this, she employed a secant line approach. By stepping from x^(0) to x^(0) + Δx, she calculated the height change over this interval: (h(x^(0) + Δx) - h(x^(0))) / Δx.
+
+As she took smaller and smaller steps, the secant line converged toward the true slope of the terrain, the gradient at her location. This gradient pointed out the steepest path upward. Using this gradient, she updated her position iteratively to climb higher. Aria continued until the gradient was nearly zero, signaling she had reached the peak and found the treasure.

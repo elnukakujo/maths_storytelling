@@ -1,0 +1,20 @@
+Practical:
+Once upon a time, Professor B had her famous “Magic Box” of red and green marbles. “Today, you’ll use Bayesian probabilities to figure out what’s inside,” she told the class.
+
+“Imagine the box has either 80% red marbles or a 50/50 mix of red and green marbles. To start, let’s assume a 50% chance that the box is mostly red and a 50% chance that it’s mixed.” She drew a red marble and said, “Now we update our beliefs.”
+
+They calculated the likelihoods: if the box is mostly red, the chance of drawing a red marble is 0.8, but if it’s mixed, it’s 0.5. Using Bayes’ theorem, they calculated the updated probabilities:
+P(mostly red∣red marble)=(P(red marble∣mostly red)⋅P(mostly red))/P(red marble)
+
+With each marble drawn, they adjusted their beliefs. A few draws later, they calculated that it was 75% likely to be mostly red and 25% mixed.
+
+By the end, they hadn’t opened the box but could confidently guess the distribution. “That’s Bayesian thinking,” Professor B said. "With each new observation, we refine our belief, calculating probabilities based on new evidence."
+
+Abstract:
+Once upon a time, Professor B was known for her "Magic Box." Every semester, she’d bring it to class and say, “Today, we’re using Bayesian probabilities to find what’s inside.”
+
+She began: “Imagine the box is full of red and green marbles. Without opening it, you’ll guess the color distribution.” Students looked perplexed. She smiled and drew a red marble. “Now you have a clue: let’s say it’s 60% likely that the box has mostly red marbles and 40% that it’s mixed.”
+
+Each turn, Professor B drew another marble, updating the likelihoods. Sometimes the chance that the box was mostly red increased, other times it shifted. Each marble drawn gave them new information, changing their beliefs.
+
+By the last draw, students were amazed. They didn’t open the box but had a pretty good idea of its contents. “That’s Bayesian thinking,” said Professor B. “With each new clue, we refine our beliefs instead of starting from scratch. We use evidence to build probability, piece by piece.”
