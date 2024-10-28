@@ -6,6 +6,7 @@ Empirical Study on Teaching Math through Storytelling between LLMs and Humans on
 - Additionally they also have an exercise.txt with questions to test the student understanding of the concepts after reading the story.
 - Each concept have a folder of its own located in data/.
 
+## TODOS
 - [ ] Screening test
 - [ ] Likert Scale survey
 - [ ] Interview questions
