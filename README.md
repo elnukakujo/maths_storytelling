@@ -7,6 +7,8 @@ Empirical Study on Teaching Math through Storytelling between LLMs and Humans on
 - Each concept have a folder of its own located in data/.
 
 ## TODOS
+- [ ] Choose which story when multiple in one .txt
+- [ ] Verify exercises
 - [ ] Screening test
 - [ ] Likert Scale survey
 - [ ] Interview questions
