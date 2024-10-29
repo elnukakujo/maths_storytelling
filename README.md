@@ -24,7 +24,7 @@ See [https://python-poetry.org/docs/](https://python-poetry.org/docs/)
 To run the program using the virtual environment of poetry:
 1. Start by locating the paths to the venv `poetry env info --path`
 2. Then if on Linux enter `source <path-here>/bin/activate`
-3. You can then execute any python program easily by entering `python program.py`
+3. You can then execute any python program easily by entering `python <program>.py`
 
 ### Installing dependances with Poetry
 `poetry add <package>`
