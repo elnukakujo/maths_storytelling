@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import "../assets/css/pages/Consent.css";
+import { useGlobal } from "../Context.js";
 
 import OutsideLinkButton from "../reusable/OutsideLinkButton.js";
 import RouteButton from "../reusable/RouteButton.js";

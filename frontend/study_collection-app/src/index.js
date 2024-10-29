@@ -6,6 +6,7 @@ import './assets/css/index.css';
 
 import Home from './pages/Home.js';
 import Consent from './pages/Consent.js';
+import Task from './pages/Task.js';
 import { ContextProvider } from './Context.js';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -15,6 +16,7 @@ root.render(
             <Routes>
                 <Route path="/" element={<Home />}/>
                 <Route path="/consent" element={<Consent />}/>
+                <Route path="/task" element={<Task />}/>
             </Routes>
         </Router>
     </ContextProvider>
