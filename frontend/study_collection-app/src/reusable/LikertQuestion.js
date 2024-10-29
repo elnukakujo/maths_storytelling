@@ -22,7 +22,7 @@ export default function LikertQuestion({ question, handleUserAnswer }) {
                             key={value} 
                             type = "radio"
                             value = {value}
-                            checked={selectedAnswer === value}
+                            checked={selectedAnswer === value.toString()}
                             onChange={handleSelection}
                         />
                     </div>
