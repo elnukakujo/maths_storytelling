@@ -7,6 +7,8 @@ import MultiAnswerQuizz from '../reusable/MultiAnswerQuizz.js';
 import GoNextButton from '../reusable/GoNextButton.js';
 import LikertQuestion from '../reusable/LikertQuestion.js';
 
+import { fetchData } from '../reusable/fetchData.js';
+
 function Story({ story, displayExercise }) {
     const [button, setButton] = useState(true);
     const handleGoNext = () => {
@@ -41,17 +43,25 @@ function Exercise({ exercise, submit }) {
                     handleUserAnswer={(answer) => handleUserAnswers(question, answer)}
                 />
             ))}
-            <GoNextButton onClick={submit} text={"Submit your answers"}/>
+            <GoNextButton onClick={exercise.every(({ question }) => question in userAnswers) ? submit:null} text={"Submit your answers"}/>
         </div>
     );
 }
 
 function Survey({surveyQuestions, onClick}) {
+    const [userAnswers, setUserAnswers] = useState({});
+    const handleUserAnswers = (question, answer) => {
+        if (userAnswers[question] === answer) return;
+        setUserAnswers(prevAnswers => ({ ...prevAnswers, [question]: answer }));
+    };
     return (
         <div className='survey'>
             <h2>Survey</h2>
             {surveyQuestions.map((question, index) => (
-                <LikertQuestion key={index} question={question} />
+                <LikertQuestion key={index} 
+                    question={question} 
+                    handleUserAnswer={(answer) => handleUserAnswers(question, answer)}
+                />
             ))}
             <GoNextButton onClick={onClick} text={"Finish Task"}/>
         </div>
@@ -69,33 +79,6 @@ export default function Task() {
     const [displaySurvey, setDisplaySurvey] = useState(false);
     const [taskNumber, setTaskNumber] = useState(0); // Initialize as 0
     const navigate = useNavigate();
-
-    const fetchQuestionsExercises = () => {
-        return new Promise((resolve) => {
-            setStories(['Once upon a time...', 'Another story...']);
-            setExercises([
-                [
-                    { question: 'What is the capital of France?', answers: ['Paris', 'London', 'Berlin', 'Madrid'] },
-                    { question: 'What is the capital of Germany?', answers: ['Paris', 'London', 'Berlin', 'Madrid'] },
-                    { question: 'What is the capital of Spain?', answers: ['Paris', 'London', 'Berlin', 'Madrid'] }
-                ],
-                [
-                    { question: 'What is the capital of UK?', answers: ['Lisboa', 'London', 'Berlin', 'Varsovia'] },
-                    { question: 'What is the capital of Poland?', answers: ['Lisboa', 'London', 'Berlin', 'Varsovia'] },
-                    { question: 'What is the capital of Portugal?', answers: ['Lisboa', 'London', 'Berlin', 'Varsovia'] }
-                ]
-            ]);
-            setSurveyQuestions([
-                'How much did you enjoy the task?',
-                'How much did you learn from the task?',
-                'How much did you like the story?',
-                'How much did you like the exercises?'
-            ]);
-    
-            // Wait for the state updates to complete in the next event loop cycle
-            setTimeout(resolve, 0);
-        });
-    };
 
     const handlePostSubmit = () => {
         setDisplayExercise(false);
@@ -126,7 +109,12 @@ export default function Task() {
     };
 
     useEffect(() => {
-        fetchQuestionsExercises(); // Wait for stories and exercises to be set
+        const data = fetchData(); // Wait for stories and exercises to be set
+        data.then(({ stories, exercises, surveyQuestions }) => {
+            setStories(stories);
+            setExercises(exercises);
+            setSurveyQuestions(surveyQuestions);
+        });
     }, []);
 
     useEffect(() => {

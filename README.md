@@ -19,7 +19,7 @@ Empirical Study on Teaching Math through Storytelling between LLMs and Humans on
 
 - [x] Add Likert scale to task page
 - [ ] Add interview questions to the page
-- [ ] Make sure participants can't click submit answer if they don't have answered all questions
+- [x] Make sure participants can't click submit answer if they don't have answered all questions
 - [ ] Make backend
-- [ ] Fetch Stories and Exercises from backend
+- [ ] Update react for backend
 - [ ] Make css style
