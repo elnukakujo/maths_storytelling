@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import React, { createContext, useContext, useState } from 'react';
 
 // Create a context
 const Context = createContext();
@@ -11,17 +11,14 @@ export const useGlobal = () => {
 // Provider component
 export const ContextProvider = ({ children }) => {
     const [isLoading, setIsLoading] = useState(false);
-    const [stories, setStories] = useState([]);
-    const [exercises, setExercises] = useState([]);
+
     // Reset all states
     const resetState = () => {
         setIsLoading(false);
-        setStories([]);
-        setExercises([]);
     };
 
     return (
-        <Context.Provider value={{ isLoading, setIsLoading, stories, setStories, exercises, setExercises, resetState }}>
+        <Context.Provider value={{ isLoading, setIsLoading, resetState }}>
             {children}
         </Context.Provider>
     );
