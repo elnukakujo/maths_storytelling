@@ -12,12 +12,6 @@ export const fetchData = async () => {
                 { question: 'What is the capital of Poland?', answers: ['Lisboa', 'London', 'Berlin', 'Varsovia'] },
                 { question: 'What is the capital of Portugal?', answers: ['Lisboa', 'London', 'Berlin', 'Varsovia'] }
             ]
-        ],
-        surveyQuestions: [
-            'How much did you enjoy the task?',
-            'How much did you learn from the task?',
-            'How much did you like the story?',
-            'How much did you like the exercises?'
         ]
     };
 }

@@ -8,6 +8,7 @@ import GoNextButton from '../reusable/GoNextButton.js';
 import LikertQuestion from '../reusable/LikertQuestion.js';
 
 import { fetchData } from '../reusable/fetchData.js';
+import { surveyQuestions } from '../constants.js';
 
 function Story({ story, displayExercise }) {
     const [button, setButton] = useState(true);
@@ -48,7 +49,7 @@ function Exercise({ exercise, submit }) {
     );
 }
 
-function Survey({surveyQuestions, onClick}) {
+function Survey({onClick}) {
     const [userAnswers, setUserAnswers] = useState({});
     const handleUserAnswers = (question, answer) => {
         if (userAnswers[question] === answer) return;
@@ -63,7 +64,7 @@ function Survey({surveyQuestions, onClick}) {
                     handleUserAnswer={(answer) => handleUserAnswers(question, answer)}
                 />
             ))}
-            <GoNextButton onClick={onClick} text={"Finish Task"}/>
+            <GoNextButton onClick={surveyQuestions.every((question)=>question in userAnswers)?onClick:null} text={"Finish Task"}/>
         </div>
     );
 }
@@ -73,11 +74,10 @@ export default function Task() {
     const [story, setStory] = useState('');
     const [exercises, setExercises] = useState([]);
     const [exercise, setExercise] = useState([]);
-    const [surveyQuestions, setSurveyQuestions] = useState([]);
     const [displayExercise, setDisplayExercise] = useState(true);
     const [displayStory, setDisplayStory] = useState(false);
     const [displaySurvey, setDisplaySurvey] = useState(false);
-    const [taskNumber, setTaskNumber] = useState(0); // Initialize as 0
+    const [taskNumber, setTaskNumber] = useState(0);
     const navigate = useNavigate();
 
     const handlePostSubmit = () => {
@@ -110,10 +110,9 @@ export default function Task() {
 
     useEffect(() => {
         const data = fetchData(); // Wait for stories and exercises to be set
-        data.then(({ stories, exercises, surveyQuestions }) => {
+        data.then(({ stories, exercises }) => {
             setStories(stories);
             setExercises(exercises);
-            setSurveyQuestions(surveyQuestions);
         });
     }, []);
 

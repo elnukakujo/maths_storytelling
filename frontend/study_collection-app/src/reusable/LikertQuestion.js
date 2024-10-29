@@ -17,9 +17,9 @@ export default function LikertQuestion({ question, handleUserAnswer }) {
                 <p>Strongly Disagree</p>
                 {Array.from({ length: 7 }, (_, i) => i + 1).map((value) => (
                     <div key={value} className="likert-answer">
-                        <label key={value}>{value}</label>
+                        <label key={"label-"+value.toString()}>{value}</label>
                         <input 
-                            key={value} 
+                            key={"input-"+value.toString()} 
                             type = "radio"
                             value = {value}
                             checked={selectedAnswer === value.toString()}

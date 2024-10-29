@@ -7,17 +7,9 @@ Empirical Study on Teaching Math through Storytelling between LLMs and Humans on
 - Each concept have a folder of its own located in data/.
 
 ## TODOS
-- [ ] Read the LLMs better than NLP article to hide better true purpose of study
-- [x] Use graeco latine square to better define randomization of stories
-- [ ] Create docusign fo consent form
 - [ ] Choose which story when multiple in one .txt
-- [ ] Verify exercises
-- [ ] Likert Scale survey
-- [ ] Interview questions
-
-### Website TODOS
-
-- [ ] Add interview questions to the page
-- [ ] Make backend
-- [ ] Update react for backend
+- [ ] Add likert scale and interview questions to constants.js
+- [ ] Choose questions doable from the stories and adapt them in multiple choice quizzes
+- [ ] Make backend, update fetchData.js to receive it, and post results to database
 - [ ] Make css style
+- [ ] Add the docsign consent after making it
