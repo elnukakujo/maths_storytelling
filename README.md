@@ -7,9 +7,9 @@ Empirical Study on Teaching Math through Storytelling between LLMs and Humans on
 - Each concept have a folder of its own located in data/.
 
 ## TODOS
-- [ ] Choose which story when multiple in one .txt
+- [x] Choose which story when multiple in one .txt
 - [ ] Add likert scale and interview questions to constants.js
-- [ ] Choose questions doable from the stories and adapt them in multiple choice quizzes
+- [x] Choose questions doable from the stories and adapt them in multiple choice quizzes
 - [ ] Make backend, update fetchData.js to receive it, and post results to database
 - [ ] Make css style
 - [ ] Add the docsign consent after making it
