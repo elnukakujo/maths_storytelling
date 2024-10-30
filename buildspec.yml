@@ -1,0 +1,22 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      dotnet: 7.0 # Specify your .NET version here
+    commands:
+      - echo Installing dependencies...
+
+  build:
+    commands:
+      - echo Building the application...
+      - dotnet restore
+      - dotnet build --configuration Release
+      - dotnet publish -c Release -o publish # Ensures output is in the `publish` folder
+
+artifacts:
+  files:
+    - publish/** # All contents in the `publish` folder
+  discard-paths: yes
+
+# Optionally, specify your deployment location here, or rely on CodePipeline to handle it.
