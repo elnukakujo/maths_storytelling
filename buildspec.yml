@@ -10,13 +10,14 @@ phases:
   build:
     commands:
       - echo Building the application...
+      - cd backend/DataCollector
       - dotnet restore
       - dotnet build --configuration Release
       - dotnet publish -c Release -o publish # Ensures output is in the `publish` folder
 
 artifacts:
   files:
-    - publish/** # All contents in the `publish` folder
+    - backend/DataCollector/publish/** # All contents in the `publish` folder
   discard-paths: yes
 
 # Optionally, specify your deployment location here, or rely on CodePipeline to handle it.
