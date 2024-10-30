@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 import '../assets/css/pages/Task.css';
 
@@ -7,7 +8,6 @@ import MultiAnswerQuizz from '../reusable/MultiAnswerQuizz.js';
 import GoNextButton from '../reusable/GoNextButton.js';
 import LikertQuestion from '../reusable/LikertQuestion.js';
 
-import { fetchData } from '../reusable/fetchData.js';
 import { surveyQuestions } from '../constants.js';
 
 function Story({ story, displayExercise }) {
@@ -37,10 +37,10 @@ function Exercise({ exercise, submit }) {
     return (
         <div className='exercises'>
             <h2>Exercise</h2>
-            {exercise.map(({ question, answers }, index) => (
+            {exercise.map(({ question, options, _ }, index) => (
                 <MultiAnswerQuizz key={index}
                     question={question}
-                    answers={answers}
+                    answers={options}
                     handleUserAnswer={(answer) => handleUserAnswers(question, answer)}
                 />
             ))}
@@ -70,9 +70,9 @@ function Survey({onClick}) {
 }
 
 export default function Task() {
-    const [stories, setStories] = useState([]);
+    const location = useLocation();
+    const { stories, exercises } = location.state||{};
     const [story, setStory] = useState('');
-    const [exercises, setExercises] = useState([]);
     const [exercise, setExercise] = useState([]);
     const [displayExercise, setDisplayExercise] = useState(true);
     const [displayStory, setDisplayStory] = useState(false);
@@ -109,17 +109,9 @@ export default function Task() {
     };
 
     useEffect(() => {
-        const data = fetchData(); // Wait for stories and exercises to be set
-        data.then(({ stories, exercises }) => {
-            setStories(stories);
-            setExercises(exercises);
-        });
-    }, []);
-
-    useEffect(() => {
         // Only call chooseStoryAndExercise if the stories and exercises have been set or when the task number changes
         chooseStoryAndExercise();
-    }, [stories, exercises, taskNumber]);
+    }, [taskNumber]);
 
     return (
         <div>

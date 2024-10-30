@@ -2,15 +2,26 @@ import { useNavigate } from "react-router-dom";
 
 import '../assets/css/reusable/RouteButton.css';
 
-import { useGlobal } from "../Context.js";
+import { fetchData } from "./fetchData.js";
 
-export default function RouteButton({ path, text }) {
+export default function RouteButton({ path, text, load }) {
     const navigate = useNavigate();
-    const { isLoading } = useGlobal();
 
-    const handleClick = () => {
-        if (isLoading) return;
-        navigate(path);
+    const handleClick = async () => {
+        if (load) {
+            const data = await fetchData('http://127.0.0.1:5288/api/Data/GetData');
+            if (data.stories && data.exercises) {
+                console.log('Data:', data.stories, data.exercises);
+                navigate(path, {
+                    state: {
+                        stories: data.stories,
+                        exercises: data.exercises
+                    }
+                });
+                return;
+            }
+        }
+        navigate(path); 
     }
     
     return (

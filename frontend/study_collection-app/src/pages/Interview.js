@@ -20,11 +20,11 @@ function Intro({ setIsIntro }) {
 }
 
 function Questions(){
-    const [currentQuestionIndex, setCurrentQuestionIndex] = React.useState(0);
+    const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     return (
         <div className="interview-question">
             <p>{interviewQuestions[currentQuestionIndex]}</p>
-            {currentQuestionIndex != 0 && (
+            {currentQuestionIndex !== 0 && (
                 <GoNextButton 
                     onClick={() => setCurrentQuestionIndex(currentQuestionIndex - 1)} 
                     text={"Previous question"}
