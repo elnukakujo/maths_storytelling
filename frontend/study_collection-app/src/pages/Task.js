@@ -9,6 +9,7 @@ import GoNextButton from '../reusable/GoNextButton.js';
 import LikertQuestion from '../reusable/LikertQuestion.js';
 
 import { surveyQuestions } from '../constants.js';
+import { postData } from '../reusable/api.js';
 
 function Story({ story, displayExercise }) {
     const [button, setButton] = useState(true);
@@ -44,7 +45,13 @@ function Exercise({ exercise, submit }) {
                     handleUserAnswer={(answer) => handleUserAnswers(question, answer)}
                 />
             ))}
-            <GoNextButton onClick={exercise.every(({ question }) => question in userAnswers) ? submit:null} text={"Submit your answers"}/>
+            <GoNextButton 
+                onClick={() => {
+                    if (exercise.every(({ question }) => question in userAnswers)) {
+                        submit(userAnswers);
+                    }
+                }} 
+                text={"Submit your answers"}/>
         </div>
     );
 }
@@ -64,7 +71,13 @@ function Survey({onClick}) {
                     handleUserAnswer={(answer) => handleUserAnswers(question, answer)}
                 />
             ))}
-            <GoNextButton onClick={surveyQuestions.every((question)=>question in userAnswers)?onClick:null} text={"Finish Task"}/>
+            <GoNextButton 
+                onClick={() => {
+                    if (surveyQuestions.every(( question ) => question in userAnswers)) {
+                        onClick(userAnswers);
+                    }
+                }} 
+                text={"Finish Task"}/>
         </div>
     );
 }
@@ -79,22 +92,27 @@ export default function Task() {
     const [displaySurvey, setDisplaySurvey] = useState(false);
     const [taskNumber, setTaskNumber] = useState(0);
     const navigate = useNavigate();
+    const [userAnswers, setUserAnswers] = useState([]);
+    const [exerciseAnswer, setExerciseAnswer] = useState({});
 
-    const handlePostSubmit = () => {
+    const handlePostSubmit = (postAnswers) => {
+        setExerciseAnswer({"postAnswers": postAnswers});
         setDisplayExercise(false);
         setDisplayStory(true);
     };
-    const handlePastSubmit = () => {
+    const handlePastSubmit = (pastAnswers) => {
+        setExerciseAnswer(prevAnswers => ({...prevAnswers,"pastAnswers": pastAnswers}));
         setDisplayExercise(false);
         setDisplayStory(false);
         setDisplaySurvey(true);
     };
 
-    const resetPage = () => {
-        if (taskNumber >= stories.length - 1) {
-            navigate('/interview');
-            return;
-        };
+    const resetPage = (surveyAnswers) => {
+        if (userAnswers.length === 0) {
+            setUserAnswers([{"exerciseAnswers":exerciseAnswer, "surveyAnswers":surveyAnswers}]);
+        } else {
+            setUserAnswers((prevAnswers) => ([...prevAnswers, {"exerciseAnswers": exerciseAnswer, "surveyAnswers": surveyAnswers}]));
+        }
         // Restart the cycle and increment the task number
         setDisplayStory(false);
         setDisplaySurvey(false);
@@ -112,6 +130,15 @@ export default function Task() {
         // Only call chooseStoryAndExercise if the stories and exercises have been set or when the task number changes
         chooseStoryAndExercise();
     }, [taskNumber]);
+
+    useEffect(() =>{
+        if (userAnswers.length >= stories.length) {
+            console.log(userAnswers);
+            postData('http://localhost:5288/api/Data/answers', userAnswers);
+            navigate('/interview');
+            return;
+        };
+    }, [userAnswers]);
 
     return (
         <div>

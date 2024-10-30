@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 
 import '../assets/css/reusable/RouteButton.css';
 
-import { fetchData } from "./fetchData.js";
+import { fetchData } from "./api.js";
 
 export default function RouteButton({ path, text, load }) {
     const navigate = useNavigate();
@@ -11,7 +11,6 @@ export default function RouteButton({ path, text, load }) {
         if (load) {
             const data = await fetchData('http://127.0.0.1:5288/api/Data/GetData');
             if (data.stories && data.exercises) {
-                console.log('Data:', data.stories, data.exercises);
                 navigate(path, {
                     state: {
                         stories: data.stories,

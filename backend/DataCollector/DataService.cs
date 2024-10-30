@@ -9,6 +9,16 @@ using System.Text.Json.Nodes;
 
 namespace DataCollector
 {
+    public class ExerciseAnswers
+    {
+        public Dictionary<string, string>? PostAnswers { get; set; }
+        public Dictionary<string, string>? PastAnswers { get; set; }
+    }
+    public class Submission
+    {
+        public ExerciseAnswers? ExerciseAnswers { get; set; }
+        public Dictionary<string, string>? SurveyAnswers { get; set; }
+    }
     public class DataService
     {
         public readonly List<((string concept, string writerType, string Id),(string concept, string writerType, string Id))> Combinations = new List<((string concept, string writerType, string Id),(string concept, string writerType, string Id))>

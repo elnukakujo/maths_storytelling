@@ -1,4 +1,5 @@
 using System.Text.Json.Nodes;
+using System.Text.Json;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DataCollector.Controllers
@@ -8,6 +9,7 @@ namespace DataCollector.Controllers
     public class DataController : ControllerBase
     {
         private readonly DataService _dataService;
+        private readonly string filePath = Path.Combine(Directory.GetCurrentDirectory(), "data", "answers.json");
 
         public DataController(DataService dataService)
         {
@@ -59,6 +61,28 @@ namespace DataCollector.Controllers
         {
             _dataService.ResetCombinationIdx();
             return Ok(_dataService.combinationIdx);
+        }
+        [HttpPost("answers")]
+        public async Task<IActionResult> PostAnswers([FromBody] List<Submission> submissions)
+        {
+            if (submissions == null)
+            {
+                return BadRequest("Data cannot be null.");
+            }
+            try 
+            {
+                // Serialize the updated list to JSON
+                var jsonData = JsonSerializer.Serialize(submissions, new JsonSerializerOptions { WriteIndented = true });
+
+                // Save JSON data to the file
+                await System.IO.File.WriteAllTextAsync(filePath, jsonData);
+
+                return Ok("Submission saved successfully.");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
         }
     }
 }
