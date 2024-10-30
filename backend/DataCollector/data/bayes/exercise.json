@@ -1,0 +1,53 @@
+[
+    {
+      "question": "What is the main goal of using Bayes' theorem when updating beliefs in this story?",
+      "options": [
+        "To calculate the average of all outcomes",
+        "To incorporate new evidence and update initial assumptions",
+        "To find the final result without conducting any experiments",
+        "To make a quick assumption without data"
+      ],
+      "answer": "To incorporate new evidence and update initial assumptions"
+    },
+    {
+      "question": "In each story, what is the importance of starting with an 'a priori' belief or assumption?",
+      "options": [
+        "It allows one to ignore all new information",
+        "It provides a baseline that can be refined with new data",
+        "It guarantees the final result will match the initial assumption",
+        "It makes the results harder to interpret"
+      ],
+      "answer": "It provides a baseline that can be refined with new data"
+    },
+    {
+      "question": "What mathematical concept helps improve predictions after observing new outcomes, such as coin flips or customer purchases?",
+      "options": [
+        "Averaging all previous results",
+        "Multiplying all probabilities together",
+        "Using conditional probability to update the likelihood",
+        "Ignoring initial assumptions"
+      ],
+      "answer": "Using conditional probability to update the likelihood"
+    },
+    {
+      "question": "How does observing additional outcomes, like drawing marbles or analyzing purchases, impact beliefs in the Bayesian approach?",
+      "options": [
+        "Each outcome makes the initial belief more uncertain",
+        "Each outcome provides more evidence, refining the probability",
+        "Each outcome reinforces the initial assumption without change",
+        "Each outcome resets the probability calculation entirely"
+      ],
+      "answer": "Each outcome provides more evidence, refining the probability"
+    },
+    {
+      "question": "What does it mean to 'update a prior belief' in Bayesian terms?",
+      "options": [
+        "To completely discard old beliefs with new information",
+        "To adjust the initial probability based on new evidence",
+        "To prove that the initial belief was incorrect",
+        "To assume new data is unrelated to the initial assumption"
+      ],
+      "answer": "To adjust the initial probability based on new evidence"
+    }
+  ]
+  

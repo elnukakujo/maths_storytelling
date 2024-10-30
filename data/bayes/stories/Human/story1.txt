@@ -1,8 +1,0 @@
-Une jeune fille se rend chez un ermite avec une pièce de monnaie, dans l’espoir de savoir si sa pièce est biaisée : elle cherche à savoir si jouer à pile ou face avec sa pièce mène aux deux côtés la moitié du temps de manière égale, ou si au contraire elle a plus de chance de tomber sur un côté spécifique.
-« Monsieur l’Ermite », dit-elle, « comment puis-je déterminer si ma pièce est biaisée ? »
-L’ermite, adepte de l’approche bayésienne des probabilités, lui répond :
-« Eh bien pour le moment, tu n’as aucune information sur ta pièce. Mais je te propose de faire une série de lancers pour affiner la connaissance que tu as sur la pièce et faire une conclusion éclairée. »
-« Comment puis-je faire cela ? » demande la fillette.
-« Grâce à la formule de Bayes, notre prophète ! » répond l’ermite. « Commence par supposer que tu ne sais rien de la pièce, c’est-à-dire qu’elle a une chance arbitraire (entre 0 et 100%) de tomber sur face. Tu fais ensuite une série de lancers et note chaque résultat. La formule de Bayes te permet d’évaluer la probabilité associée à tes résultats de lancers, compte tenu de l’hypothèse que tu as faite sur la pièce. »
-Il conclut:
-« Tu peux ensuite tirer avantage de cette formule pour peaufiner ton a priori sur la pièce : si tes lancers étaient très peu probables, alors ton a priori doit être modifié. Inversément, si tes lancers étaient presque garantis, alors tu peux avoir confiance en ton a priori. En d’autres mots, tu utilises tes expériences pour affiner ton évaluation du caractère biaisé de la pièce. »

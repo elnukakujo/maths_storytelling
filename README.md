@@ -13,3 +13,12 @@ Empirical Study on Teaching Math through Storytelling between LLMs and Humans on
 - [ ] Make backend, update fetchData.js to receive it, and post results to database
 - [ ] Make css style
 - [ ] Add the docsign consent after making it
+
+## Execution
+Keep in mind than both the backend and the frontend must be running for the app to work
+
+### Frontend
+In the terminal, go to frontend/study_collection-app and enter `npm start`
+
+### Backend
+In the terminal, go to backend/DataController and enter `dotnet run`
