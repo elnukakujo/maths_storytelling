@@ -18,11 +18,11 @@ phases:
       - dotnet build backend/DataCollector/DataCollector.csproj
   
   post_build:
-  commands:
-    - echo Publish started on `date`
-    - dotnet publish backend/DataCollector/DataCollector.csproj -c Release -o ./publish
-    - mkdir -p ./publish/data
-    - rsync -av backend/DataCollector/data/ ./publish/data/ # Make sure to copy the full data folder
+    commands:
+      - echo Publish started on `date`
+      - dotnet publish backend/DataCollector/DataCollector.csproj -c Release -o ./publish
+      - mkdir -p ./publish/data
+      - rsync -av backend/DataCollector/data/ ./publish/data/ # Make sure to copy the full data folder
 
 artifacts:
   files:
