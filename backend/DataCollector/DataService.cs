@@ -76,7 +76,7 @@ namespace DataCollector
             // Check if the story file exists
             if (!System.IO.File.Exists(path))
             {
-                throw new Exception($"Path does not exist: {path}");
+                throw new Exception($"Path does not exist: {path},{System.IO.Directory.GetCurrentDirectory()},{System.IO.Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.Parent.FullName}");
             }
             var content = await System.IO.File.ReadAllTextAsync(path);
             return content;
