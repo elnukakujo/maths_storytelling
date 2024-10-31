@@ -18,15 +18,14 @@ phases:
       - dotnet build backend/DataCollector/DataCollector.csproj
   
   post_build:
-    commands:
-      - echo Publish started on `date`
-      - dotnet publish backend/DataCollector/DataCollector.csproj -c Release -o backend/DataCollector/publish
-      - mkdir -p backend/DataCollector/publish/data
-      - rsync -av --ignore-missing-args backend/DataCollector/data/ backend/DataCollector/publish/data/ # Make sure to copy the full data folder
+  commands:
+    - echo Publish started on `date`
+    - dotnet publish backend/DataCollector/DataCollector.csproj -c Release -o ./publish
+    - mkdir -p ./publish/data
+    - rsync -av backend/DataCollector/data/ ./publish/data/ # Make sure to copy the full data folder
 
 artifacts:
   files:
     - backend/DataCollector/publish/** # All contents in the `publish` folder
-  discard-paths: yes
 
 # Optionally, specify your deployment location here, or rely on CodePipeline to handle it.
