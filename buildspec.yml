@@ -23,13 +23,9 @@ phases:
       - dotnet publish backend/DataCollector/DataCollector.csproj -c Release -o ./publish
       - cd publish
       - ls
-      - rsync -av data/ ./data/ # Make sure to copy the full data folder
-      - cd data
-      - ls
 
 artifacts:
   files:
     - publish/** # All contents in the `publish` folder
-    - .ebextensions/** # All contents in the `.ebextensions` folder
 
 # Optionally, specify your deployment location here, or rely on CodePipeline to handle it.
