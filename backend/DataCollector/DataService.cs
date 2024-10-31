@@ -76,7 +76,7 @@ namespace DataCollector
             // Check if the story file exists
             if (!System.IO.File.Exists(path))
             {
-                throw new Exception($"Path does not exist: {path},{System.IO.Directory.GetCurrentDirectory()},{System.IO.File.Exists(Path.Combine("data","gradient"))},{System.IO.File.Exists(Path.Combine("data","gradient","stories"))},{System.IO.File.Exists(Path.Combine("data","gradient","stories","Human"))},{System.IO.File.Exists(Path.Combine("data","gradient","stories","Human","story0.txt"))}");
+                throw new Exception($"Path does not exist: {path},{System.IO.Directory.GetCurrentDirectory()},{Directory.GetDirectories(System.IO.Directory.GetCurrentDirectory())},{System.IO.File.Exists(Path.Combine("data","gradient","stories"))},{System.IO.File.Exists(Path.Combine("data","gradient","stories","Human"))},{System.IO.File.Exists(Path.Combine("data","gradient","stories","Human","story0.txt"))}");
             }
             var content = await System.IO.File.ReadAllTextAsync(path);
             return content;
