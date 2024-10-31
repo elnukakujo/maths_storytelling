@@ -21,11 +21,13 @@ phases:
     commands:
       - echo Publish started on `date`
       - dotnet publish backend/DataCollector/DataCollector.csproj -c Release -o ./publish
+      - cd publish
+      - ls
       - mkdir -p ./publish/data
       - rsync -av backend/DataCollector/data/ ./publish/data/ # Make sure to copy the full data folder
 
 artifacts:
   files:
-    - '**/*' # All contents in the `publish` folder
+    - publish/** # All contents in the `publish` folder
 
 # Optionally, specify your deployment location here, or rely on CodePipeline to handle it.
