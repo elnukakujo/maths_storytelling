@@ -26,6 +26,6 @@ phases:
 
 artifacts:
   files:
-    - publish/** # All contents in the `publish` folder
+    - '**/*' # All contents in the `publish` folder
 
 # Optionally, specify your deployment location here, or rely on CodePipeline to handle it.
