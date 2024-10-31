@@ -3,7 +3,7 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      dotnet: 7.0 # Specify your .NET version here
+      dotnet: 8.0 # Specify your .NET version here
     commands:
       - echo Installing dependencies...
 
