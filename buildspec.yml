@@ -21,6 +21,9 @@ phases:
     commands:
       - echo Publish started on `date`
       - dotnet publish backend/DataCollector/DataCollector.csproj -c Release -o ./publish
+      - echo "Copying data folder to publish directory if needed"
+      - mkdir -p ./publish/data
+      - cp -R data/* ./publish/data
       - cd publish
       - ls
 
