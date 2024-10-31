@@ -21,7 +21,8 @@ phases:
     commands:
       - echo Publish started on `date`
       - dotnet publish backend/DataCollector/DataCollector.csproj -c Release -o backend/DataCollector/publish
-      - cp -r backend/DataCollector/data backend/DataCollector/publish/data # Make sure to copy the full data folder
+      - mkdir -p backend/DataCollector/publish/data
+      - cp -r backend/DataCollector/data/* backend/DataCollector/publish/data/ # Make sure to copy the full data folder
 
 artifacts:
   files:
