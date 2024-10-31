@@ -24,8 +24,9 @@ phases:
       - echo "Copying data folder to publish directory if needed"
       - mkdir -p ./publish/data
       - cp -R backend/DataCollector/data/* ./publish/data
-      - cd publish
-      - ls
+      - echo "Listing contents of publish directory for verification"
+      - ls ./publish/data
+      - ls ./publish
 
 artifacts:
   files:
