@@ -47,7 +47,6 @@ namespace DataCollector.Controllers
                 ["stories"] = stories,
                 ["exercises"] = exercises
             };
-            _dataService.IncrementCombinationIdx();
             return Ok(data);
         }
         [HttpGet("SetIdx")]
@@ -92,6 +91,7 @@ namespace DataCollector.Controllers
 
                 // Save JSON data to the file
                 await System.IO.File.WriteAllTextAsync(filePath, jsonData);
+                _dataService.IncrementCombinationIdx();
 
                 return Ok("Participant saved successfully.");
             }
