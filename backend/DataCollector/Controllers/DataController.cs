@@ -29,17 +29,23 @@ namespace DataCollector.Controllers
                 var concept = task.concept;
                 var writerType = task.writerType;
                 var id = task.id;
-
-                var storyPath = Path.Combine("data", concept, "stories", writerType, $"story{id}.txt");
-                string story = (string)await _dataService.GetData(storyPath);
-                stories.Add(story);
-
-                var exercisePath = Path.Combine("data", concept, "exercise.json");
-                string exerciseJson = (string)await _dataService.GetData(exercisePath);
-                JsonArray? exercise = JsonNode.Parse(exerciseJson)?.AsArray();
-                if (exercise != null)
+                try
                 {
-                    exercises.Add(exercise);
+                    var storyPath = Path.Combine("data", concept, "stories", writerType, $"story{id}.txt");
+                    string story = (string)await _dataService.GetData(storyPath);
+                    stories.Add(story);
+
+                    var exercisePath = Path.Combine("data", concept, "exercise.json");
+                    string exerciseJson = (string)await _dataService.GetData(exercisePath);
+                    JsonArray? exercise = JsonNode.Parse(exerciseJson)?.AsArray();
+                    if (exercise != null)
+                    {
+                        exercises.Add(exercise);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    return StatusCode(500, $"Internal server error: {ex.Message}");
                 }
             }
             JsonObject data = new JsonObject
