@@ -1,0 +1,13 @@
+Imagine a blindfolded hiker lost in a foggy mountain. Their goal: to reach the valley's lowest point. Guided by a magical compass pointing downhill, they take small steps, adjusting their course after each. Eventually, they reach the valley.
+
+Gradient Descent works similarly. It's an algorithm finding a function's minimum point. Starting randomly, it calculates the gradient ∇f(x), a vector pointing uphill. 
+
+To descend, the algorithm updates its position:
+
+```
+x = x - α∇f(x)
+```
+
+Here, `x` is the current point, `α` is the step size (learning rate), and `∇f(x)` is the gradient.
+
+Iteratively, the algorithm adjusts its steps based on the gradient, converging to the minimum point.
