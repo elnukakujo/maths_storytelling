@@ -9,8 +9,12 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.10" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.9.0" />
-    <Content Include="data\**\*.txt" CopyToOutputDirectory="PreserveNewest" />
-    <Content Include="data\**\*.json" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="data\gradient\LLM\*.txt" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="data\gradient\Human\*.txt" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="data\gradient\exercise.json" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="data\bayes\LLM\*.txt" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="data\bayes\Human\*.txt" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="data\bayes\exercise.json" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
 </Project>
