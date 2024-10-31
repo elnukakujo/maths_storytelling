@@ -19,6 +19,11 @@ namespace DataCollector
         public ExerciseAnswers? ExerciseAnswers { get; set; }
         public Dictionary<string, string>? SurveyAnswers { get; set; }
     }
+    public class Participant
+    {
+        public int? Id { get; set; }
+        public List<Submission>? Submissions { get; set; }
+    }
     public class DataService
     {
         public readonly List<((string concept, string writerType, string Id),(string concept, string writerType, string Id))> Combinations = new List<((string concept, string writerType, string Id),(string concept, string writerType, string Id))>

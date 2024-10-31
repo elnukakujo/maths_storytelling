@@ -69,15 +69,31 @@ namespace DataCollector.Controllers
             {
                 return BadRequest("Data cannot be null.");
             }
-            try 
+            try
             {
+                // Create a new Participant object
+                var participant = new Participant
+                {
+                    Id = _dataService.combinationIdx,
+                    Submissions = submissions
+                };
+
+                // Read existing participants from the file
+                var existingData = await System.IO.File.ReadAllTextAsync(filePath);
+                var participants = string.IsNullOrWhiteSpace(existingData) 
+                    ? new List<Participant>() 
+                    : JsonSerializer.Deserialize<List<Participant>>(existingData);
+
+                // Add the new participant to the list
+                participants.Add(participant);
+
                 // Serialize the updated list to JSON
-                var jsonData = JsonSerializer.Serialize(submissions, new JsonSerializerOptions { WriteIndented = true });
+                var jsonData = JsonSerializer.Serialize(participants, new JsonSerializerOptions { WriteIndented = true });
 
                 // Save JSON data to the file
                 await System.IO.File.WriteAllTextAsync(filePath, jsonData);
 
-                return Ok("Submission saved successfully.");
+                return Ok("Participant saved successfully.");
             }
             catch (Exception ex)
             {

@@ -1,56 +1,88 @@
 [
   {
-    "ExerciseAnswers": {
-      "PostAnswers": {
-        "What is the primary purpose of using Gradient Descent in optimization?": "To iteratively move towards the lowest point of a function",
-        "In Gradient Descent, what does the gradient tell us?": "The direction of the steepest ascent",
-        "Why is a \u0027learning rate\u0027 used in Gradient Descent?": "To find the steepest uphill direction",
-        "In these stories, what does it mean when the gradient is zero?": "The function has reached a maximum",
-        "What is the purpose of taking small, iterative steps in Gradient Descent?": "To move as quickly as possible towards the function\u0027s peak"
+    "Id": 0,
+    "Submissions": [
+      {
+        "ExerciseAnswers": {
+          "PostAnswers": {
+            "additionalProp1": "string",
+            "additionalProp2": "string",
+            "additionalProp3": "string"
+          },
+          "PastAnswers": {
+            "additionalProp1": "string",
+            "additionalProp2": "string",
+            "additionalProp3": "string"
+          }
+        },
+        "SurveyAnswers": {
+          "additionalProp1": "string",
+          "additionalProp2": "string",
+          "additionalProp3": "string"
+        }
       },
-      "PastAnswers": {
-        "What is the purpose of taking small, iterative steps in Gradient Descent?": "To accurately follow the function\u0027s steepest incline",
-        "In these stories, what does it mean when the gradient is zero?": "The function has reached a maximum",
-        "In Gradient Descent, what does the gradient tell us?": "The function\u0027s average rate of change",
-        "Why is a \u0027learning rate\u0027 used in Gradient Descent?": "To determine how quickly or slowly to move towards the minimum",
-        "What is the primary purpose of using Gradient Descent in optimization?": "To find the middle point of a function\u0027s range"
+      {
+        "ExerciseAnswers": {
+          "PostAnswers": {
+            "additionalProp1": "string",
+            "additionalProp2": "string",
+            "additionalProp3": "string"
+          },
+          "PastAnswers": {
+            "additionalProp1": "string",
+            "additionalProp2": "string",
+            "additionalProp3": "string"
+          }
+        },
+        "SurveyAnswers": {
+          "additionalProp1": "string",
+          "additionalProp2": "string",
+          "additionalProp3": "string"
+        }
       }
-    },
-    "SurveyAnswers": {
-      "I am confident in my ability to understand new concepts": "1",
-      "I am confident in my ability to solve problems": "2",
-      "I am confident in my ability to learn new technologies": "3",
-      "I am confident in my ability to work with others": "7",
-      "I am confident in my ability to communicate effectively": "6",
-      "I am confident in my ability to meet deadlines": "7",
-      "I am confident in my ability to work under pressure": "7"
-    }
+    ]
   },
   {
-    "ExerciseAnswers": {
-      "PostAnswers": {
-        "What does it mean to \u0027update a prior belief\u0027 in Bayesian terms?": "To completely discard old beliefs with new information",
-        "How does observing additional outcomes, like drawing marbles or analyzing purchases, impact beliefs in the Bayesian approach?": "Each outcome makes the initial belief more uncertain",
-        "What mathematical concept helps improve predictions after observing new outcomes, such as coin flips or customer purchases?": "Averaging all previous results",
-        "In each story, what is the importance of starting with an \u0027a priori\u0027 belief or assumption?": "It allows one to ignore all new information",
-        "What is the main goal of using Bayes\u0027 theorem when updating beliefs in this story?": "To calculate the average of all outcomes"
+    "Id": 0,
+    "Submissions": [
+      {
+        "ExerciseAnswers": {
+          "PostAnswers": {
+            "additionalProp1": "string",
+            "additionalProp2": "string",
+            "additionalProp3": "string"
+          },
+          "PastAnswers": {
+            "additionalProp1": "string",
+            "additionalProp2": "string",
+            "additionalProp3": "string"
+          }
+        },
+        "SurveyAnswers": {
+          "additionalProp1": "string",
+          "additionalProp2": "string",
+          "additionalProp3": "string"
+        }
       },
-      "PastAnswers": {
-        "What is the main goal of using Bayes\u0027 theorem when updating beliefs in this story?": "To calculate the average of all outcomes",
-        "In each story, what is the importance of starting with an \u0027a priori\u0027 belief or assumption?": "It allows one to ignore all new information",
-        "What mathematical concept helps improve predictions after observing new outcomes, such as coin flips or customer purchases?": "Averaging all previous results",
-        "How does observing additional outcomes, like drawing marbles or analyzing purchases, impact beliefs in the Bayesian approach?": "Each outcome makes the initial belief more uncertain",
-        "What does it mean to \u0027update a prior belief\u0027 in Bayesian terms?": "To completely discard old beliefs with new information"
+      {
+        "ExerciseAnswers": {
+          "PostAnswers": {
+            "additionalProp1": "string",
+            "additionalProp2": "string",
+            "additionalProp3": "string"
+          },
+          "PastAnswers": {
+            "additionalProp1": "string",
+            "additionalProp2": "string",
+            "additionalProp3": "string"
+          }
+        },
+        "SurveyAnswers": {
+          "additionalProp1": "string",
+          "additionalProp2": "string",
+          "additionalProp3": "string"
+        }
       }
-    },
-    "SurveyAnswers": {
-      "I am confident in my ability to understand new concepts": "1",
-      "I am confident in my ability to solve problems": "1",
-      "I am confident in my ability to learn new technologies": "1",
-      "I am confident in my ability to work with others": "1",
-      "I am confident in my ability to work under pressure": "1",
-      "I am confident in my ability to meet deadlines": "1",
-      "I am confident in my ability to communicate effectively": "1"
-    }
+    ]
   }
 ]
