@@ -45,7 +45,7 @@ namespace DataCollector.Controllers
                 }
                 catch (Exception ex)
                 {
-                    return StatusCode(500, $"Internal server error: {ex.Message}");
+                    return StatusCode(404, $"Internal server error: {ex.Message}");
                 }
             }
             JsonObject data = new JsonObject
