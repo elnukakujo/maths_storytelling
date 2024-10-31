@@ -23,8 +23,9 @@ phases:
       - dotnet publish backend/DataCollector/DataCollector.csproj -c Release -o ./publish
       - cd publish
       - ls
-      - mkdir -p ./publish/data
-      - rsync -av backend/DataCollector/data/ ./publish/data/ # Make sure to copy the full data folder
+      - rsync -av backend/DataCollector/data/ ./data/ # Make sure to copy the full data folder
+      - cd data
+      - ls
 
 artifacts:
   files:
