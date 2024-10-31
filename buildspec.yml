@@ -30,5 +30,6 @@ phases:
 artifacts:
   files:
     - publish/** # All contents in the `publish` folder
+    - .ebextensions/** # All contents in the `.ebextensions` folder
 
 # Optionally, specify your deployment location here, or rely on CodePipeline to handle it.
