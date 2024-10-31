@@ -7,13 +7,20 @@ phases:
     commands:
       - echo Installing dependencies...
 
+  pre_build:
+    commands:
+      - echo Restore started on `date`
+      - dotnet restore backend/DataCollector/DataCollector.csproj
+
   build:
     commands:
-      - echo Building the application...
-      - cd backend/DataCollector
-      - dotnet restore
-      - dotnet build --configuration Release
-      - dotnet publish -c Release -o publish # Ensures output is in the `publish` folder
+      - echo Build started on `date`
+      - dotnet build backend/DataCollector/DataCollector.csproj
+  
+  post_build:
+    commands:
+      - echo Publish started on `date`
+      - dotnet publish backend/DataCollector/DataCollector.csproj -c Release -o backend/DataCollector/publish
 
 artifacts:
   files:
