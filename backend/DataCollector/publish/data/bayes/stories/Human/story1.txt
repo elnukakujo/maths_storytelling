@@ -1,8 +1,0 @@
-A young girl goes to a hermit with a coin, hoping to find out if her coin is biased: she's trying to find out if flipping a coin leads to both sides equally half the time, or if it's more likely to land on a specific side.
-“Monsieur l'Ermite,” she says, ”how can I determine if my coin is biased?”
-The hermit, an adept of the Bayesian approach to probability, replies:
-“Well, at the moment, you don't have any information about your coin. But I suggest you make a series of throws to refine the knowledge you have about the coin and make an informed conclusion.”
-“How can I do that?” asks the little girl.
-“Thanks to the formula of Bayes, our prophet!” replies the hermit. “Start by assuming that you know nothing about the coin, i.e. that it has an arbitrary chance (between 0 and 100%) of falling on heads. You then make a series of throws and note down each result. Bayes' formula allows you to evaluate the probability associated with your toss results, given the assumption you've made about the coin.”
-He concludes:
-“You can then take advantage of this formula to fine-tune your a priori about the coin: if your throws were very unlikely, then your a priori should be modified. Conversely, if your throws were almost guaranteed, then you can be confident in your a priori. In other words, you use your experiences to refine your preconceived notions. In other words, you use your experiences to refine your assessment of the coin's bias." 

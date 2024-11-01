@@ -1,7 +1,0 @@
-Once upon a time, Professor B was known for her "Magic Box." Every semester, she’d bring it to class and say, “Today, we’re using Bayesian probabilities to find what’s inside.”
-
-She began: “Imagine the box is full of red and green marbles. Without opening it, you’ll guess the color distribution.” Students looked perplexed. She smiled and drew a red marble. “Now you have a clue: let’s say it’s 60% likely that the box has mostly red marbles and 40% that it’s mixed.”
-
-Each turn, Professor B drew another marble, updating the likelihoods. Sometimes the chance that the box was mostly red increased, other times it shifted. Each marble drawn gave them new information, changing their beliefs.
-
-By the last draw, students were amazed. They didn’t open the box but had a pretty good idea of its contents. “That’s Bayesian thinking,” said Professor B. “With each new clue, we refine our beliefs instead of starting from scratch. We use evidence to build probability, piece by piece.”

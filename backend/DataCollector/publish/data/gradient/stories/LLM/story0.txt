@@ -1,9 +1,0 @@
-In Professor Lee’s mountain-climbing class, each student had a unique goal: reach the lowest valley hidden in a foggy landscape. The catch? They could only see a few feet around them.
-
-“Think of it as Gradient Descent,” Professor Lee said. “Each step you take downhill is a tiny adjustment to find the lowest point, or the ‘global minimum.’ Start where you are and feel for the slope beneath your feet.”
-
-Students took small steps, one at a time, always heading downward. Some found smaller dips, or “local minima,” and stopped, thinking they’d reached the lowest point. But others persisted, carefully feeling the ground for steeper declines, aiming for that elusive valley.
-
-Over time, those who kept adjusting gradually found deeper points, realizing they could only reach their goal through patience and constant, small corrections.
-
-“Remember,” Professor Lee said at the end, “Gradient Descent is about trusting each step, even if the ‘global minimum’ is still hidden in the fog.”
