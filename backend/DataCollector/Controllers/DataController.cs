@@ -67,8 +67,8 @@ namespace DataCollector.Controllers
             _dataService.ResetCombinationIdx();
             return Ok(_dataService.combinationIdx);
         }
-        [HttpPost("answers")]
-        public async Task<IActionResult> PostAnswers([FromBody] List<Submission> submissions)
+        [HttpPost("participant")]
+        public async Task<IActionResult> PostParticipant([FromBody] List<Submission> submissions)
         {
             if (submissions == null)
             {
@@ -96,18 +96,42 @@ namespace DataCollector.Controllers
                 var jsonData = JsonSerializer.Serialize(participants, new JsonSerializerOptions { WriteIndented = true });
 
                 // Save JSON data to the file
-                try
-                {
-                    await System.IO.File.WriteAllTextAsync(filePath, jsonData);
-                }
-                catch (IOException ex)
-                {
-                    Directory.CreateDirectory(Path.GetDirectoryName(filePath));
-                    await System.IO.File.WriteAllTextAsync(filePath, jsonData);
-                }
+                await System.IO.File.WriteAllTextAsync(filePath, jsonData);
                 _dataService.IncrementCombinationIdx();
 
                 return Ok("Participant saved successfully.");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
+        }
+        [HttpGet("answers")]
+        public async Task<IActionResult> GetAnswers()
+        {
+            try
+            {
+                var data = await System.IO.File.ReadAllTextAsync(filePath);
+                return Ok(data);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
+        }
+        [HttpGet("resetAnswers")]
+        public async Task<IActionResult> ResetAnswers()
+        {
+            try
+            {
+                // Reset the content of the file to an empty list
+                var emptyList = new List<Participant>();
+                var jsonData = JsonSerializer.Serialize(emptyList, new JsonSerializerOptions { WriteIndented = true });
+
+                // Save the empty JSON data to the file
+                await System.IO.File.WriteAllTextAsync(filePath, jsonData);
+
+                return Ok("Answers reset successfully.");
             }
             catch (Exception ex)
             {
