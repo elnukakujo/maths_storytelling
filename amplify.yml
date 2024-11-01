@@ -3,15 +3,15 @@ frontend:
   phases:
     preBuild:
       commands:
-        - cd frontend/study_completion-app
+        - cd frontend/study_collection-app
         - npm install
     build:
       commands:
         - npm run build
   artifacts:
-    baseDirectory: frontend/study_completion-app/build
+    baseDirectory: frontend/study_collection-app/build
     files:
       - '**/*'
   cache:
     paths:
-      - frontend/study_completion-app/node_modules/**/*
+      - frontend/study_collection-app/node_modules/**/*
