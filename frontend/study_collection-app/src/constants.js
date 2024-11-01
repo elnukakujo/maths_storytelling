@@ -18,4 +18,4 @@ export const interviewQuestions = [
     'Tell me about a time you had to communicate effectively'
 ];
 
-export const apiUrl = 'http://llmmathstorytelling-dev-env.eba-zbsh3pdd.us-east-1.elasticbeanstalk.com/api/Data/';
+export const apiUrl = 'https://d3idk86ydwnqb5.cloudfront.net/api/Data/';
