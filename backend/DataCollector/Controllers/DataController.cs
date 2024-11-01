@@ -96,7 +96,15 @@ namespace DataCollector.Controllers
                 var jsonData = JsonSerializer.Serialize(participants, new JsonSerializerOptions { WriteIndented = true });
 
                 // Save JSON data to the file
-                await System.IO.File.WriteAllTextAsync(filePath, jsonData);
+                try
+                {
+                    await System.IO.File.WriteAllTextAsync(filePath, jsonData);
+                }
+                catch (IOException ex)
+                {
+                    Directory.CreateDirectory(Path.GetDirectoryName(filePath));
+                    await System.IO.File.WriteAllTextAsync(filePath, jsonData);
+                }
                 _dataService.IncrementCombinationIdx();
 
                 return Ok("Participant saved successfully.");
