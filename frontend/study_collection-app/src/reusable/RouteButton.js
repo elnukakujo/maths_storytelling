@@ -9,7 +9,7 @@ export default function RouteButton({ path, text, load }) {
 
     const handleClick = async () => {
         if (load) {
-            const data = await fetchData('http://127.0.0.1:5288/api/Data/GetData');
+            const data = await fetchData(load);
             if (data.stories && data.exercises) {
                 navigate(path, {
                     state: {

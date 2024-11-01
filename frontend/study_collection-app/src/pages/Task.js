@@ -134,7 +134,7 @@ export default function Task() {
     useEffect(() =>{
         if (userAnswers.length >= stories.length) {
             console.log(userAnswers);
-            postData('http://localhost:5288/api/Data/answers', userAnswers);
+            postData('participant', userAnswers);
             navigate('/interview');
             return;
         };

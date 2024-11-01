@@ -1,6 +1,8 @@
+import { apiUrl } from "../constants";
+
 export const fetchData = async (url) => {
     try {
-        const response = await fetch(url);
+        const response = await fetch(apiUrl+url);
         
         // Check if the response is ok (status in the range 200-299)
         if (!response.ok) {
@@ -18,7 +20,7 @@ export const fetchData = async (url) => {
 
 export const postData = async (url, data) => {
     try {
-        const response = await fetch(url, {
+        const response = await fetch(apiUrl+url, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

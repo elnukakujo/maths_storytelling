@@ -21,7 +21,7 @@ export default function Consent() {
             <p>
                 Once you read and signed the consent form, please click the button below to start the study. Again if you have any questions, feel free to stop us and ask us anytime.
             </p>
-            <RouteButton path="/task" text="Start study" load={'http://127.0.0.1:5288/api/Data/GetData'}/>
+            <RouteButton path="/task" text="Start study" load={'GetData'}/>
         </div>
     );
 }
