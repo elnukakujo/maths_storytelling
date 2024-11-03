@@ -1,0 +1,35 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      dotnet: 8.0 # Specify your .NET version here
+    commands:
+      - echo Installing dependencies...
+
+  pre_build:
+    commands:
+      - echo Restore started on `date`
+      - dotnet restore backend/DataCollector/DataCollector.csproj
+
+  build:
+    commands:
+      - echo Build started on `date`
+      - dotnet build backend/DataCollector/DataCollector.csproj
+  
+  post_build:
+    commands:
+      - echo Publish started on `date`
+      - dotnet publish backend/DataCollector/DataCollector.csproj -c Release -o ./publish
+      - echo "Copying data folder to publish directory if needed"
+      - mkdir -p ./publish/data
+      - cp -R backend/DataCollector/data/* ./publish/data
+      - echo "Listing contents of publish directory for verification"
+      - ls ./publish/data
+      - ls ./publish
+
+artifacts:
+  files:
+    - publish/** # All contents in the `publish` folder
+
+# Optionally, specify your deployment location here, or rely on CodePipeline to handle it.

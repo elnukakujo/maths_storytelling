@@ -29,17 +29,23 @@ namespace DataCollector.Controllers
                 var concept = task.concept;
                 var writerType = task.writerType;
                 var id = task.id;
-
-                var storyPath = Path.Combine("data", concept, "stories", writerType, $"story{id}.txt");
-                string story = (string)await _dataService.GetData(storyPath);
-                stories.Add(story);
-
-                var exercisePath = Path.Combine("data", concept, "exercise.json");
-                string exerciseJson = (string)await _dataService.GetData(exercisePath);
-                JsonArray? exercise = JsonNode.Parse(exerciseJson)?.AsArray();
-                if (exercise != null)
+                try
                 {
-                    exercises.Add(exercise);
+                    var storyPath = Path.Combine("data", concept, "stories", writerType, $"story{id}.txt");
+                    string story = (string)await _dataService.GetData(storyPath);
+                    stories.Add(story);
+
+                    var exercisePath = Path.Combine("data", concept, "exercise.json");
+                    string exerciseJson = (string)await _dataService.GetData(exercisePath);
+                    JsonArray? exercise = JsonNode.Parse(exerciseJson)?.AsArray();
+                    if (exercise != null)
+                    {
+                        exercises.Add(exercise);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    return StatusCode(404, $"Internal server error: {ex.Message}");
                 }
             }
             JsonObject data = new JsonObject
@@ -47,7 +53,6 @@ namespace DataCollector.Controllers
                 ["stories"] = stories,
                 ["exercises"] = exercises
             };
-            _dataService.IncrementCombinationIdx();
             return Ok(data);
         }
         [HttpGet("SetIdx")]
@@ -62,22 +67,71 @@ namespace DataCollector.Controllers
             _dataService.ResetCombinationIdx();
             return Ok(_dataService.combinationIdx);
         }
-        [HttpPost("answers")]
-        public async Task<IActionResult> PostAnswers([FromBody] List<Submission> submissions)
+        [HttpPost("participant")]
+        public async Task<IActionResult> PostParticipant([FromBody] List<Submission> submissions)
         {
             if (submissions == null)
             {
                 return BadRequest("Data cannot be null.");
             }
-            try 
+            try
             {
+                // Create a new Participant object
+                var participant = new Participant
+                {
+                    Id = _dataService.combinationIdx,
+                    Submissions = submissions
+                };
+
+                // Read existing participants from the file
+                var existingData = await System.IO.File.ReadAllTextAsync(filePath);
+                var participants = string.IsNullOrWhiteSpace(existingData) 
+                    ? new List<Participant>() 
+                    : JsonSerializer.Deserialize<List<Participant>>(existingData);
+
+                // Add the new participant to the list
+                participants.Add(participant);
+
                 // Serialize the updated list to JSON
-                var jsonData = JsonSerializer.Serialize(submissions, new JsonSerializerOptions { WriteIndented = true });
+                var jsonData = JsonSerializer.Serialize(participants, new JsonSerializerOptions { WriteIndented = true });
 
                 // Save JSON data to the file
                 await System.IO.File.WriteAllTextAsync(filePath, jsonData);
+                _dataService.IncrementCombinationIdx();
 
-                return Ok("Submission saved successfully.");
+                return Ok("Participant saved successfully.");
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
+        }
+        [HttpGet("answers")]
+        public async Task<IActionResult> GetAnswers()
+        {
+            try
+            {
+                var data = await System.IO.File.ReadAllTextAsync(filePath);
+                return Ok(data);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}");
+            }
+        }
+        [HttpGet("resetAnswers")]
+        public async Task<IActionResult> ResetAnswers()
+        {
+            try
+            {
+                // Reset the content of the file to an empty list
+                var emptyList = new List<Participant>();
+                var jsonData = JsonSerializer.Serialize(emptyList, new JsonSerializerOptions { WriteIndented = true });
+
+                // Save the empty JSON data to the file
+                await System.IO.File.WriteAllTextAsync(filePath, jsonData);
+
+                return Ok("Answers reset successfully.");
             }
             catch (Exception ex)
             {
