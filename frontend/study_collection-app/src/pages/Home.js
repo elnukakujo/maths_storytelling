@@ -1,7 +1,8 @@
 import React from 'react';
 import '../assets/css/pages/Home.css';
-
 import RouteButton from '../reusable/RouteButton';
+
+
 
 
 
@@ -48,7 +49,7 @@ export default function Home() {
         <div>
             <Welcome/>
             <Introduction/>
-            <RouteButton path="/consent" text="Start"/>
+            <RouteButton path="/consent" text="Start" className="start-button"/>
         </div>
     );
 }

@@ -1,0 +1,79 @@
+/* Overall page styling */
+body {
+  background-color: #f4f6f8; /* Light background for contrast */
+  font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+/* Welcome section */
+.start {
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 30px;
+  background-color: #ffffff; /* White background */
+  border-left: 5px solid #0056a6; /* University of Montreal blue accent */
+}
+
+.start h1 {
+  font-size: 2.5rem;
+  color: #0056a6; /* University of Montreal blue */
+  margin-bottom: 10px;
+}
+
+.start p {
+  font-size: 1.1rem;
+  color: #333;
+}
+
+/* Introduction section */
+.introduction {
+  background-color: #e9f0f5; /* Soft blue background */
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  border-left: 5px solid #0056a6; /* Accent line */
+}
+
+.introduction h2 {
+  color: #0056a6; /* Blue for section titles */
+  margin-bottom: 10px;
+}
+
+.introduction h3 {
+  color: #007bff; /* Slightly lighter blue for subtitles */
+  margin-top: 15px;
+}
+
+.introduction p {
+  color: #444;
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+/* Button styling */
+.start-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 28px; /* Increased padding for a better feel */
+  background-color: #0056a6; /* University blue */
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 8px; /* Slightly more rounded corners */
+  border: 1px solid #004080; /* Subtle border */
+  font-size: 1rem;
+  font-weight: bold; /* Make text bold */
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+}
+
+.start-button:hover {
+  background-color: #004080; /* Darker blue on hover */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Slightly larger shadow on hover */
+}
+
+.start-button:active {
+  background-color: #003366; /* Even darker blue for active state */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Reduced shadow for active state */
+}
+

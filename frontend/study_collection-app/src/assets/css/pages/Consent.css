@@ -1,0 +1,46 @@
+/* Overall consent page styling */
+.consent {
+  background-color: #ffffff; /* White background */
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 800px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-left: 5px solid #0056a6; /* University blue accent */
+}
+
+/* Heading styling */
+.consent h1 {
+  color: #0056a6; /* University blue */
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+/* Paragraph styling */
+.consent p {
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+/* Button styling (if different button classes are needed) */
+.consent a,
+.consent button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 12px 24px;
+  background-color: #0056a6; /* University blue */
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.consent a:hover,
+.consent button:hover {
+  background-color: #004080; /* Darker blue */
+}

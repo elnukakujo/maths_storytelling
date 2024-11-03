@@ -1,0 +1,50 @@
+/* Overall styling for the multi-answer quiz component */
+.multi-answer-quizz {
+  background-color: #ffffff; /* White background */
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-left: 5px solid #0056a6; /* University blue accent */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Question header styling */
+.multi-answer-quizz h3 {
+  color: #0056a6; /* University blue */
+  margin-bottom: 10px;
+}
+
+/* Answers container */
+.answers {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Space between answer options */
+}
+
+/* Label styling for each answer */
+.answers label {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  color: #333;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+/* Input styling */
+.answers input[type="radio"] {
+  margin-right: 10px;
+  accent-color: #0056a6; /* University blue */
+}
+
+/* Hover effect for answer labels */
+.answers label:hover {
+  background-color: #e9f0f5; /* Light blue background on hover */
+}
+
+/* Selected answer styling */
+.answers input[type="radio"]:checked + label {
+  background-color: #d0e7f9; /* Light blue for selected answer */
+}
