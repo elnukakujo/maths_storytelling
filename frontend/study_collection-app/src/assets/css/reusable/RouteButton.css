@@ -16,3 +16,12 @@
 .route-button:hover {
   background-color: #004080;
 }
+
+.route-button.active {
+  background-color: #0056a6; /* University blue */
+  cursor: pointer; /* Change cursor when active */
+}
+
+.route-button.active:hover {
+  background-color: #004080; /* Darker blue on hover */
+}

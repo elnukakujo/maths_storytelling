@@ -1,8 +1,7 @@
-
-export default function GoNextButton({ onClick, text }) {
+export default function GoNextButton({ className, onClick, text }) {
     return (
-        <div className="go-next" onClick={onClick}>
-            <span>{text}</span>
-        </div>
+        <button className={`go-next ${className}`} onClick={onClick}>
+            {text}
+        </button>
     );
 }

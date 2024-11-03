@@ -46,6 +46,7 @@ function Exercise({ exercise, submit }) {
                 />
             ))}
             <GoNextButton 
+                 className={`route-button ${exercise.every(({ question }) => question in userAnswers) ? 'active' : ''}`}
                 onClick={() => {
                     if (exercise.every(({ question }) => question in userAnswers)) {
                         submit(userAnswers);
