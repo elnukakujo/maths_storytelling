@@ -11,15 +11,15 @@ export default function MultiAnswerQuizz({question, answers, handleUserAnswer}) 
     }
 
     return(
-        <div className="multi-answer-quizz">
+            <div className="multi-answer-quizz">
             <h3>{question}</h3>
-            <div className="answers">
+            <div className="answers vertical-layout"> {/* Added specific class */}
                 {answers.map((answer, index) => (
                     <label key={index}>
                         <input 
                             key={index} 
-                            type = "radio"
-                            value = {answer}
+                            type="radio"
+                            value={answer}
                             checked={selectedAnswer === answer}
                             onChange={handleSelection}
                         />
@@ -27,6 +27,7 @@ export default function MultiAnswerQuizz({question, answers, handleUserAnswer}) 
                     </label>
                 ))}
             </div>
-        </div>
+            </div>
+
     );
 }

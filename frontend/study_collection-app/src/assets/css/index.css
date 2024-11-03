@@ -11,3 +11,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.logo-container {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0px; /* Adjust padding as needed */
+}
+
+.udem-logo {
+  width: 150px; /* Adjust the size as needed */
+}

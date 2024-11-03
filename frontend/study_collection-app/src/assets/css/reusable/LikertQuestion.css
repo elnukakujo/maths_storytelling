@@ -1,50 +1,45 @@
-/* Overall styling for the likert question component */
-.likert-question {
-  background-color: #ffffff; /* White background for clarity */
-  border-radius: 8px;
-  padding: 15px;
-  margin-bottom: 20px;
-  border-left: 5px solid #0056a6; /* University blue accent */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Question header styling */
-.likert-question h3 {
-  color: #0056a6; /* University blue */
-  margin-bottom: 10px;
-}
-
-/* Answers container */
+/* Container for the answers */
 .answers {
-  display: flex;
+  display: flex; /* Display items inline */
+  flex-direction: row; /* Ensure horizontal layout */
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-between; /* Adjust spacing evenly */
   margin-top: 10px;
-  font-size: 0.9rem;
-  color: #333;
+  gap: 10px; /* Space between answer options */
 }
 
 /* Styling for individual likert answer blocks */
 .likert-answer {
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* Stack label and input vertically */
   align-items: center;
+  margin: 0; /* Remove extra margin */
+  text-align: center;
 }
 
-/* Label styling */
-.likert-answer label {
-  margin-bottom: 5px;
-  color: #444;
-}
-
-/* Radio button styling */
+/* Adjust input alignment */
 .likert-answer input[type="radio"] {
-  accent-color: #0056a6; /* University blue */
+  margin-bottom: 5px;
   cursor: pointer;
 }
 
-/* Text styling for "Strongly Disagree" and "Strongly Agree" */
-.answers p {
+/* Update labels */
+.likert-answer label {
   margin: 0;
-  color: #555;
+}
+
+/* Styling for strong agreement text */
+.answers p {
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+/* Overall styling for the likert question component */
+.likert-question {
+  background-color: #ffffff; /* White background for clarity */
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 30px; /* Increased margin to add more space between questions */
+  border-left: 5px solid #0056a6; /* University blue accent */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }

@@ -1,6 +1,8 @@
 import React from 'react';
 import '../assets/css/pages/Home.css';
 import RouteButton from '../reusable/RouteButton';
+import udemLogo from './photos/UdeM-logo.png';
+
 
 
 
@@ -47,6 +49,9 @@ function Introduction() {
 export default function Home() {
     return (
         <div>
+            <div className="logo-container">
+                <img src={udemLogo} alt="Université de Montréal Logo" className="udem-logo" />
+            </div>
             <Welcome/>
             <Introduction/>
             <RouteButton path="/consent" text="Start" className="start-button"/>

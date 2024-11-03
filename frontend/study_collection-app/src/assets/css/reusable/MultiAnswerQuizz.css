@@ -17,7 +17,7 @@
 /* Answers container */
 .answers {
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* Ensures vertical display */
   gap: 10px; /* Space between answer options */
 }
 
@@ -47,4 +47,10 @@
 /* Selected answer styling */
 .answers input[type="radio"]:checked + label {
   background-color: #d0e7f9; /* Light blue for selected answer */
+}
+/* Ensuring the multi-answer quiz questions stay vertical */
+.answers.vertical-layout {
+  display: flex;
+  flex-direction: column; /* Keeps it vertical */
+  gap: 10px; /* Space between each option */
 }
