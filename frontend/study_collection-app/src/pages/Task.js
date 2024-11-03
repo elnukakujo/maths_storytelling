@@ -10,6 +10,7 @@ import LikertQuestion from '../reusable/LikertQuestion.js';
 
 import { surveyQuestions } from '../constants.js';
 import { postData } from '../reusable/api.js';
+import udemLogo from './photos/UdeM-logo.png';
 
 function Story({ story, displayExercise }) {
     const [button, setButton] = useState(true);
@@ -46,6 +47,7 @@ function Exercise({ exercise, submit }) {
                 />
             ))}
             <GoNextButton 
+                 className={`route-button ${exercise.every(({ question }) => question in userAnswers) ? 'active' : ''}`}
                 onClick={() => {
                     if (exercise.every(({ question }) => question in userAnswers)) {
                         submit(userAnswers);
@@ -142,6 +144,9 @@ export default function Task() {
 
     return (
         <div>
+            <div className="logo-container">
+                <img src={udemLogo} alt="Université de Montréal Logo" className="udem-logo" />
+            </div>
             <h1>Task {taskNumber + 1}</h1>
             {displayExercise && !displayStory && ( // Pre test without the story
                 <Exercise exercise={exercise ? exercise : []} submit={handlePostSubmit}/>

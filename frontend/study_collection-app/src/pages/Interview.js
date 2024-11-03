@@ -4,6 +4,7 @@ import "../assets/css/pages/Interview.css";
 import { interviewQuestions } from "../constants";
 
 import GoNextButton from "../reusable/GoNextButton.js";
+import udemLogo from './photos/UdeM-logo.png';
 
 function Intro({ setIsIntro }) {
     return (
@@ -44,8 +45,17 @@ export default function Interview() {
     const [isIntro, setIsIntro] = React.useState(true);
     return (
         <div className="interview">
+            <div className="logo-container">
+                <img src={udemLogo} alt="Université de Montréal Logo" className="udem-logo" />
+            </div>
             <h1>Interview</h1>
             {isIntro ? <Intro setIsIntro={setIsIntro} /> : <Questions />}
         </div>
     );
 }
+
+
+
+{/* <div className="logo-container">
+<img src={udemLogo} alt="Université de Montréal Logo" className="udem-logo" />
+</div> */}

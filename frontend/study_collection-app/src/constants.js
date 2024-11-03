@@ -18,4 +18,5 @@ export const interviewQuestions = [
     'Tell me about a time you had to communicate effectively'
 ];
 
+
 export const apiUrl = 'https://d3idk86ydwnqb5.cloudfront.net/api/Data/';

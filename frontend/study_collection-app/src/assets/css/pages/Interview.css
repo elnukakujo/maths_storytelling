@@ -1,0 +1,70 @@
+/* Overall interview page styling */
+.interview {
+  background-color: #ffffff; /* White background */
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 800px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-left: 5px solid #0056a6; /* University blue accent */
+}
+
+/* Heading styling */
+.interview h1 {
+  color: #0056a6; /* University blue */
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+/* Introduction section */
+.intro {
+  background-color: #e9f0f5; /* Soft blue background */
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border-left: 5px solid #007bff; /* Slightly lighter blue accent */
+}
+
+.intro p {
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+/* Interview questions styling */
+.interview-question {
+  background-color: #e9f0f5; /* Soft blue background */
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border-left: 5px solid #007bff; /* Slightly lighter blue accent */
+}
+
+.interview-question p {
+  color: #333;
+  line-height: 1.6;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+}
+
+/* Button styling */
+.interview button,
+.interview a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #0056a6; /* University blue */
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.interview button:hover,
+.interview a:hover {
+  background-color: #004080; /* Darker blue */
+}

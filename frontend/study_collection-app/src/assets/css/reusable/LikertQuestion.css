@@ -1,0 +1,45 @@
+/* Container for the answers */
+.answers {
+  display: flex; /* Display items inline */
+  flex-direction: row; /* Ensure horizontal layout */
+  align-items: center;
+  justify-content: space-between; /* Adjust spacing evenly */
+  margin-top: 10px;
+  gap: 10px; /* Space between answer options */
+}
+
+/* Styling for individual likert answer blocks */
+.likert-answer {
+  display: flex;
+  flex-direction: column; /* Stack label and input vertically */
+  align-items: center;
+  margin: 0; /* Remove extra margin */
+  text-align: center;
+}
+
+/* Adjust input alignment */
+.likert-answer input[type="radio"] {
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+/* Update labels */
+.likert-answer label {
+  margin: 0;
+}
+
+/* Styling for strong agreement text */
+.answers p {
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+/* Overall styling for the likert question component */
+.likert-question {
+  background-color: #ffffff; /* White background for clarity */
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 30px; /* Increased margin to add more space between questions */
+  border-left: 5px solid #0056a6; /* University blue accent */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}

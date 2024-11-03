@@ -19,47 +19,39 @@ namespace DataCollector
         public ExerciseAnswers? ExerciseAnswers { get; set; }
         public Dictionary<string, string>? SurveyAnswers { get; set; }
     }
+    public class Participant
+    {
+        public int? Id { get; set; }
+        public List<Submission>? Submissions { get; set; }
+    }
     public class DataService
     {
         public readonly List<((string concept, string writerType, string Id),(string concept, string writerType, string Id))> Combinations = new List<((string concept, string writerType, string Id),(string concept, string writerType, string Id))>
         {
-            (("gradient", "LLM", "1"), ("bayes", "Human", "0")),
-            (("gradient", "Human", "1"), ("bayes", "LLM", "0")),
-            (("bayes", "LLM", "0"), ("gradient", "Human", "0")),
-            (("gradient", "Human", "2"), ("bayes", "LLM", "1")),
             (("bayes", "Human", "0"), ("gradient", "LLM", "0")),
-            (("bayes", "LLM", "2"), ("gradient", "Human", "2")),
+            (("bayes", "Human", "0"), ("gradient", "LLM", "1")),
+            (("bayes", "Human", "1"), ("gradient", "LLM", "0")),
+            (("bayes", "Human", "1"), ("gradient", "LLM", "1")),
+            (("bayes", "Human", "2"), ("gradient", "LLM", "0")),
             (("bayes", "Human", "2"), ("gradient", "LLM", "1")),
             (("gradient", "Human", "0"), ("bayes", "LLM", "0")),
-            (("bayes", "LLM", "0"), ("gradient", "Human", "1")),
+            (("gradient", "Human", "0"), ("bayes", "LLM", "1")),
+            (("gradient", "Human", "1"), ("bayes", "LLM", "0")),
+            (("gradient", "Human", "1"), ("bayes", "LLM", "1")),
+            (("gradient", "Human", "2"), ("bayes", "LLM", "0")),
+            (("gradient", "Human", "2"), ("bayes", "LLM", "1")),
+            (("gradient", "LLM", "0"), ("bayes", "Human", "0")),
+            (("gradient", "LLM", "1"), ("bayes", "Human", "0")),
             (("gradient", "LLM", "0"), ("bayes", "Human", "1")),
             (("gradient", "LLM", "1"), ("bayes", "Human", "1")),
-            (("bayes", "Human", "2"), ("gradient", "LLM", "2")),
-            (("bayes", "Human", "1"), ("gradient", "LLM", "1")),
-            (("gradient", "LLM", "2"), ("bayes", "Human", "1")),
-            (("bayes", "Human", "1"), ("gradient", "LLM", "2")),
-            (("gradient", "Human", "0"), ("bayes", "LLM", "2")),
-            (("bayes", "LLM", "2"), ("gradient", "Human", "0")),
-            (("gradient", "LLM", "2"), ("bayes", "Human", "0")),
-            (("gradient", "Human", "0"), ("bayes", "LLM", "1")),
-            (("bayes", "LLM", "1"), ("gradient", "Human", "2")),
-            (("gradient", "Human", "1"), ("bayes", "LLM", "1")),
-            (("bayes", "LLM", "1"), ("gradient", "Human", "0")),
-            (("gradient", "Human", "1"), ("bayes", "LLM", "2")),
-            (("bayes", "Human", "0"), ("gradient", "LLM", "2")),
-            (("bayes", "LLM", "2"), ("gradient", "Human", "1")),
-            (("bayes", "LLM", "0"), ("gradient", "Human", "2")),
-            (("bayes", "Human", "1"), ("gradient", "LLM", "0")),
-            (("bayes", "Human", "0"), ("gradient", "LLM", "1")),
             (("gradient", "LLM", "0"), ("bayes", "Human", "2")),
-            (("gradient", "Human", "1"), ("bayes", "LLM", "2")),
-            (("gradient", "LLM", "0"), ("bayes", "Human", "0")),
-            (("bayes", "LLM", "1"), ("gradient", "Human", "2")),
-            (("gradient", "LLM", "2"), ("bayes", "Human", "2")),
-            (("gradient", "Human", "2"), ("bayes", "LLM", "0")),
-            (("bayes", "LLM", "2"), ("gradient", "Human", "0")),
-            (("bayes", "LLM", "0"), ("gradient", "Human", "2")),
-            (("bayes", "Human", "2"), ("gradient", "LLM", "0"))
+            (("gradient", "LLM", "1"), ("bayes", "Human", "2")),
+            (("bayes", "LLM", "0"), ("bayes", "gradient", "0")),
+            (("bayes", "LLM", "1"), ("bayes", "gradient", "0")),
+            (("bayes", "LLM", "0"), ("bayes", "gradient", "1")),
+            (("bayes", "LLM", "1"), ("bayes", "gradient", "1")),
+            (("bayes", "LLM", "0"), ("bayes", "gradient", "2")),
+            (("bayes","LLM", "1"), ("bayes", "gradient", "2"))
         };
         public int combinationIdx = 0;
 
@@ -71,7 +63,7 @@ namespace DataCollector
             // Check if the story file exists
             if (!System.IO.File.Exists(path))
             {
-                throw new Exception($"Path does not exist: {path}");
+                throw new Exception($"Path does not exist: {path}, current directory: {System.IO.Directory.GetCurrentDirectory()}, contents: {String.Join(", ", Directory.GetFileSystemEntries(System.IO.Directory.GetCurrentDirectory()))}");
             }
             var content = await System.IO.File.ReadAllTextAsync(path);
             return content;

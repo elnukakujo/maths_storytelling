@@ -24,7 +24,7 @@ export default function RouteButton({ path, text, load }) {
     }
     
     return (
-        <div className="route-button" onClick={handleClick}>
+        <div className="route button" onClick={handleClick}>
             <span>
                 {text}
             </span>

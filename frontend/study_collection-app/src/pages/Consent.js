@@ -4,10 +4,15 @@ import "../assets/css/pages/Consent.css";
 
 import OutsideLinkButton from "../reusable/OutsideLinkButton.js";
 import RouteButton from "../reusable/RouteButton.js";
+import udemLogo from './photos/UdeM-logo.png';
 
 export default function Consent() {
     return (
+        
         <div className="consent">
+            <div className="logo-container">
+                <img src={udemLogo} alt="Université de Montréal Logo" className="udem-logo" />
+            </div>
             <h1>Consent form</h1>
             <p>
                 This form is to ensure that you understand the study and agree to participate. 

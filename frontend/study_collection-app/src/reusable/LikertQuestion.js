@@ -1,5 +1,4 @@
 import React from "react";
-
 import "../assets/css/reusable/LikertQuestion.css";
 
 export default function LikertQuestion({ question, handleUserAnswer }) {
@@ -8,7 +7,7 @@ export default function LikertQuestion({ question, handleUserAnswer }) {
     const handleSelection = (event) => {
         setSelectedAnswer(event.target.value);
         handleUserAnswer(event.target.value);
-    }
+    };
 
     return (
         <div className="likert-question">
@@ -16,19 +15,19 @@ export default function LikertQuestion({ question, handleUserAnswer }) {
             <div className="answers">
                 <p>Strongly Disagree</p>
                 {Array.from({ length: 7 }, (_, i) => i + 1).map((value) => (
-                    <div key={value} className="likert-answer">
-                        <label key={"label-"+value.toString()}>{value}</label>
+                    <label key={value} className="likert-answer">
+                        {value}
                         <input 
-                            key={"input-"+value.toString()} 
-                            type = "radio"
-                            value = {value}
+                            type="radio"
+                            value={value}
                             checked={selectedAnswer === value.toString()}
                             onChange={handleSelection}
                         />
-                    </div>
+                    </label>
                 ))}
                 <p>Strongly Agree</p>
             </div>
         </div>
     );
 }
+
