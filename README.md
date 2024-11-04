@@ -2,8 +2,8 @@
 Empirical Study on Teaching Math through Storytelling between LLMs and Humans on a student population
 
 ## Maths Concepts
-We are using Bayes Probability and Gradient Descent for this comparison. Each has stories from different sources, bearing the name of the LLM creators (0: ChatGPT, 1: Gemini, or 2: Copilot) or anonymized humans.
-Additionally, they have an exercise.txt with questions to test the students' understanding of the concepts after reading the story.
+- We are using Bayes Probability and Gradient Descent for this comparison. Each has stories from different sources, bearing the name of the LLM creators (0: ChatGPT, 1: Gemini, or 2: Copilot) or anonymized humans.
+- Additionally, they have an exercise.txt with questions to test the students' understanding of the concepts after reading the story.
 - Each concept has a folder of its own located in data/.
 
 ## TODOS
