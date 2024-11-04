@@ -8,9 +8,8 @@ Empirical Study on Teaching Math through Storytelling between LLMs and Humans on
 
 ## TODOS
 - [ ] Add Likert scale and interview questions to constants.js
-- [x] Make backend, update fetchData.js to receive it, and post results to the database
-- [ ] Make css style
 - [ ] Add the docsign consent after making it
+- [ ] Finish the study protocol and the rapport
 
 ## Execution
 Keep in mind that both the backend and the frontend must be running for the app to work.
