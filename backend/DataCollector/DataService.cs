@@ -32,26 +32,18 @@ namespace DataCollector
             (("bayes", "Human", "0"), ("gradient", "LLM", "1")),
             (("bayes", "Human", "1"), ("gradient", "LLM", "0")),
             (("bayes", "Human", "1"), ("gradient", "LLM", "1")),
-            (("bayes", "Human", "2"), ("gradient", "LLM", "0")),
-            (("bayes", "Human", "2"), ("gradient", "LLM", "1")),
             (("gradient", "Human", "0"), ("bayes", "LLM", "0")),
             (("gradient", "Human", "0"), ("bayes", "LLM", "1")),
             (("gradient", "Human", "1"), ("bayes", "LLM", "0")),
             (("gradient", "Human", "1"), ("bayes", "LLM", "1")),
-            (("gradient", "Human", "2"), ("bayes", "LLM", "0")),
-            (("gradient", "Human", "2"), ("bayes", "LLM", "1")),
             (("gradient", "LLM", "0"), ("bayes", "Human", "0")),
             (("gradient", "LLM", "1"), ("bayes", "Human", "0")),
             (("gradient", "LLM", "0"), ("bayes", "Human", "1")),
             (("gradient", "LLM", "1"), ("bayes", "Human", "1")),
-            (("gradient", "LLM", "0"), ("bayes", "Human", "2")),
-            (("gradient", "LLM", "1"), ("bayes", "Human", "2")),
             (("bayes", "LLM", "0"), ("bayes", "gradient", "0")),
             (("bayes", "LLM", "1"), ("bayes", "gradient", "0")),
             (("bayes", "LLM", "0"), ("bayes", "gradient", "1")),
-            (("bayes", "LLM", "1"), ("bayes", "gradient", "1")),
-            (("bayes", "LLM", "0"), ("bayes", "gradient", "2")),
-            (("bayes","LLM", "1"), ("bayes", "gradient", "2"))
+            (("bayes", "LLM", "1"), ("bayes", "gradient", "1"))
         };
         public int combinationIdx = 0;
 
