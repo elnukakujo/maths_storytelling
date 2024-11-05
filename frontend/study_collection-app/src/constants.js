@@ -16,7 +16,7 @@ export const interviewQuestions = [
     'Did one story make the math concept feel easier to grasp than the other?',
     'Would adding more visuals or diagrams have helped?',
     'Was there any part of the story that felt unclear or confusing?',
-    'would you consider seeking out stories or analogies when learning new math concepts in the future? Why or why not?'
+    'Would you consider seeking out stories or analogies when learning new math concepts in the future? Why or why not?'
 ];
 
 
