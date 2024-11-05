@@ -2,19 +2,18 @@
 Empirical Study on Teaching Math through Storytelling between LLMs and Humans on a student population
 
 ## Maths Concepts
-- We are using Bayes Probability and Gradient Descent for this comparison. Each have stories from different sources, carrying the name of the LLM creators (0: ChatGPT, 1: Gemini or 2: Copilote) or anonymized humans.
-- Additionally they also have an exercise.txt with questions to test the student understanding of the concepts after reading the story.
-- Each concept have a folder of its own located in data/.
+- We are using Bayes Probability and Gradient Descent for this comparison. Each has stories from different sources, bearing the name of the LLM creators (0: ChatGPT, 1: Gemini, or 2: Copilot) or anonymized humans.
+- Additionally, they have an exercise.txt with questions to test the students' understanding of the concepts after reading the story.
+- Each concept has a folder of its own located in data/.
 
 ## TODOS
-- [ ] Add likert scale and interview questions to constants.js
-- [x] Make backend, update fetchData.js to receive it, and post results to database
-- [ ] Make css style
+- [ ] Add Likert scale and interview questions to constants.js
 - [ ] Add the docsign consent after making it
+- [ ] Finish the study protocol and the rapport
 
 ## Execution
-Keep in mind than both the backend and the frontend must be running for the app to work.
-After finishing both tasks, the answers of the pre/post exercises and survey answers are saved in backend/DataCollector/data/answers.json .
+Keep in mind that both the backend and the frontend must be running for the app to work.
+After finishing both tasks, the answers to the pre/post exercises and survey answers are saved in backend/DataCollector/data/answers.json .
 
 ### Frontend
 In the terminal, go to frontend/study_collection-app and enter `npm start`

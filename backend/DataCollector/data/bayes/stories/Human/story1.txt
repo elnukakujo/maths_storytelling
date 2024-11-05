@@ -1,5 +1,5 @@
 A young girl goes to a hermit with a coin, hoping to find out if her coin is biased: she's trying to find out if flipping a coin leads to both sides equally half the time, or if it's more likely to land on a specific side.
-“Monsieur l'Ermite,” she says, ”how can I determine if my coin is biased?”
+“Mr Ermite,” she says, ”how can I determine if my coin is biased?”
 The hermit, an adept of the Bayesian approach to probability, replies:
 “Well, at the moment, you don't have any information about your coin. But I suggest you make a series of throws to refine the knowledge you have about the coin and make an informed conclusion.”
 “How can I do that?” asks the little girl.
