@@ -5,7 +5,8 @@
         "To calculate the average of all outcomes",
         "To incorporate new evidence and update initial assumptions",
         "To find the final result without knowing the individual probabilities",
-        "To calculate the median of all probabilities"
+        "To calculate the median of all probabilities",
+        "Not sure"
       ],
       "answer": "To incorporate new evidence and update initial assumptions"
     },
@@ -15,7 +16,8 @@
         "It allows one to ignore all new information",
         "It provides a baseline that can be refined with new data",
         "It guarantees the final result will match the initial assumption",
-        "It makes the results harder to interpret"
+        "It makes the results harder to interpret",
+        "Not sure"
       ],
       "answer": "It provides a baseline that can be refined with new data"
     },
@@ -25,7 +27,8 @@
         "Yes, because recent events suggest that the risk might be higher than previously thought",
         "No, because a few small earthquakes don’t necessarily change long-term risk",
         "Yes, because any recent change should drastically adjust initial assumptions",
-        "No, because historical data is always more reliable than current observations"
+        "No, because historical data is always more reliable than current observations",
+        "Not sure"
       ],
       "answer": "Yes, because recent events suggest that the risk might be higher than previously thought"
     },
@@ -35,7 +38,8 @@
         "Each outcome makes the initial belief more uncertain",
         "Each outcome provides more evidence, refining the probability",
         "Each outcome reinforces the initial assumption without change",
-        "Each outcome resets the probability calculation"
+        "Each outcome resets the probability calculation",
+        "Not sure"
       ],
       "answer": "Each outcome provides more evidence, refining the probability"
     },
@@ -45,7 +49,8 @@
         "Yes, because a positive test result confirms the disease with high accuracy",
         "No, because the rarity of the disease means the probability of a false positive could still be high",
         "Yes, because the test’s accuracy is high enough to trust the result without additional context",
-        "No, because all positive tests are likely to be incorrect due to the rarity of the disease"
+        "No, because all positive tests are likely to be incorrect due to the rarity of the disease",
+        "Not sure"
       ],
       "answer": "No, because the rarity of the disease means the probability of a false positive could still be high"
     }

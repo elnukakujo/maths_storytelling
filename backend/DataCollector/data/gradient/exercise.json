@@ -5,7 +5,8 @@
         "To find the steepest uphill path to maximize a function",
         "To iteratively move towards the lowest point of a function",
         "To calculate the average value of a function",
-        "To find the middle point of a function's range"
+        "To find the middle point of a function's range",
+        "Not sure"
       ],
       "answer": "To iteratively move towards the lowest point of a function"
     },
@@ -15,7 +16,8 @@
         "The function's average rate of change",
         "The direction of the steepest ascent",
         "The distance to the function's minimum point",
-        "The function's highest possible value"
+        "The function's highest possible value",
+        "Not sure"
       ],
       "answer": "The direction of the steepest ascent"
     },
@@ -25,7 +27,8 @@
         "It’s different because turning knobs doesn’t provide feedback on the best direction",
         "It’s similar because each adjustment goes directly to the final setting",
         "It’s similar because each adjustment moves in the direction that improves performance the most",
-        "It’s different because model optimization doesn’t involve gradual adjustments"
+        "It’s different because model optimization doesn’t involve gradual adjustments",
+        "Not sure"
       ],
       "answer": "It’s similar because each adjustment moves in the direction that improves performance the most"
     },
@@ -35,7 +38,8 @@
         "The function has reached a maximum",
         "The function is at a flat point or minimum",
         "The function has been reset to the starting point",
-        "The function’s average value has been reached"
+        "The function’s average value has been reached",
+        "Not sure"
       ],
       "answer": "The function is at a flat point or minimum"
     },
@@ -45,7 +49,8 @@
         "To move as quickly as possible towards the function's peak",
         "To accurately follow the function's steepest incline",
         "To avoid missing the global minimum and ensure gradual convergence",
-        "To calculate the average slope of the function"
+        "To calculate the average slope of the function",
+        "Not sure"
       ],
       "answer": "To avoid missing the global minimum and ensure gradual convergence"
     }
