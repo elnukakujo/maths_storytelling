@@ -97,13 +97,13 @@ export default function Task() {
     const [userAnswers, setUserAnswers] = useState([]);
     const [exerciseAnswer, setExerciseAnswer] = useState({});
 
-    const handlePostSubmit = (postAnswers) => {
-        setExerciseAnswer({"postAnswers": postAnswers});
+    const handlePreSubmit = (preAnswers) => {
+        setExerciseAnswer({"preAnswers": preAnswers});
         setDisplayExercise(false);
         setDisplayStory(true);
     };
-    const handlePastSubmit = (pastAnswers) => {
-        setExerciseAnswer(prevAnswers => ({...prevAnswers,"pastAnswers": pastAnswers}));
+    const handlePostSubmit = (postAnswers) => {
+        setExerciseAnswer(preAnswers => ({...preAnswers,"postAnswers": postAnswers}));
         setDisplayExercise(false);
         setDisplayStory(false);
         setDisplaySurvey(true);
@@ -141,7 +141,6 @@ export default function Task() {
             return;
         };
     }, [userAnswers]);
-
     return (
         <div>
             <div className="logo-container">
@@ -149,13 +148,13 @@ export default function Task() {
             </div>
             <h1>Task {taskNumber + 1}</h1>
             {displayExercise && !displayStory && ( // Pre test without the story
-                <Exercise exercise={exercise ? exercise : []} submit={handlePostSubmit}/>
+                <Exercise exercise={exercise ? exercise : []} submit={handlePreSubmit}/>
             )}
             {displayStory && (
                 <Story story={story} displayExercise={() => setDisplayExercise(true)} />
             )}
             {displayExercise && displayStory && ( //Post test with the story
-                <Exercise exercise={exercise} submit={handlePastSubmit}/>
+                <Exercise exercise={exercise} submit={handlePostSubmit}/>
             )}
             {displaySurvey && (
                 <Survey surveyQuestions={surveyQuestions} onClick={resetPage} />  
