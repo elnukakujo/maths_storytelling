@@ -11,8 +11,8 @@ namespace DataCollector
 {
     public class ExerciseAnswers
     {
+        public Dictionary<string, string>? PreAnswers { get; set; }
         public Dictionary<string, string>? PostAnswers { get; set; }
-        public Dictionary<string, string>? PastAnswers { get; set; }
     }
     public class Submission
     {
