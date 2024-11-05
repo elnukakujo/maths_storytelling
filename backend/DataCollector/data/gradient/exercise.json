@@ -20,17 +20,17 @@
       "answer": "The direction of the steepest ascent"
     },
     {
-      "question": "Why is a 'learning rate' used in Gradient Descent?",
+      "question": "In training a model, imagine you’re adjusting its settings to improve its performance, like adjusting knobs to make a radio sound clearer. When you turn a knob and hear a clearer sound, you keep turning in that direction. How is this process similar to using gradients in optimizing a model?",
       "options": [
-        "To determine how quickly or slowly to move towards the minimum",
-        "To calculate the average gradient at each step",
-        "To decide when to reset to the starting point",
-        "To find the steepest uphill direction"
+        "It’s different because turning knobs doesn’t provide feedback on the best direction",
+        "It’s similar because each adjustment goes directly to the final setting",
+        "It’s similar because each adjustment moves in the direction that improves performance the most",
+        "It’s different because model optimization doesn’t involve gradual adjustments"
       ],
-      "answer": "To determine how quickly or slowly to move towards the minimum"
+      "answer": "It’s similar because each adjustment moves in the direction that improves performance the most"
     },
     {
-      "question": "In these stories, what does it mean when the gradient is zero?",
+      "question": "What does it mean when the gradient is zero?",
       "options": [
         "The function has reached a maximum",
         "The function is at a flat point or minimum",

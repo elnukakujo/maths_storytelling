@@ -1,16 +1,16 @@
 [
     {
-      "question": "What is the main goal of using Bayes' theorem when updating beliefs in this story?",
+      "question": "What is the main goal of using Bayes' theorem?",
       "options": [
         "To calculate the average of all outcomes",
         "To incorporate new evidence and update initial assumptions",
-        "To find the final result without conducting any experiments",
-        "To make a quick assumption without data"
+        "To find the final result without knowing the individual probabilities",
+        "To calculate the median of all probabilities"
       ],
       "answer": "To incorporate new evidence and update initial assumptions"
     },
     {
-      "question": "In each story, what is the importance of starting with an 'a priori' belief or assumption?",
+      "question": "What is the importance of starting with a belief or an assumption?",
       "options": [
         "It allows one to ignore all new information",
         "It provides a baseline that can be refined with new data",
@@ -20,14 +20,14 @@
       "answer": "It provides a baseline that can be refined with new data"
     },
     {
-      "question": "What mathematical concept helps improve predictions after observing new outcomes, such as coin flips or customer purchases?",
+      "question": "An environmental scientist believes that a certain region has a low risk of earthquakes based on historical data. Recently, a few small earthquakes have been detected in the area. Should the scientist start to think differently about the earthquake risk in this region? Why or why not?",
       "options": [
-        "Averaging all previous results",
-        "Multiplying all probabilities together",
-        "Using conditional probability to update the likelihood",
-        "Ignoring initial assumptions"
+        "Yes, because recent events suggest that the risk might be higher than previously thought",
+        "No, because a few small earthquakes don’t necessarily change long-term risk",
+        "Yes, because any recent change should drastically adjust initial assumptions",
+        "No, because historical data is always more reliable than current observations"
       ],
-      "answer": "Using conditional probability to update the likelihood"
+      "answer": "Yes, because recent events suggest that the risk might be higher than previously thought"
     },
     {
       "question": "How does observing additional outcomes, like drawing marbles or analyzing purchases, impact beliefs in the Bayesian approach?",
@@ -35,19 +35,19 @@
         "Each outcome makes the initial belief more uncertain",
         "Each outcome provides more evidence, refining the probability",
         "Each outcome reinforces the initial assumption without change",
-        "Each outcome resets the probability calculation entirely"
+        "Each outcome resets the probability calculation"
       ],
       "answer": "Each outcome provides more evidence, refining the probability"
     },
     {
-      "question": "What does it mean to 'update a prior belief' in Bayesian terms?",
+      "question": "Imagine a doctor is reviewing test results for a rare disease. The test is accurate 95% of the time but also produces false positives 5% of the time. If the disease is very rare in the general population, should the doctor immediately assume a positive test means the patient likely has the disease? Why or why not?",
       "options": [
-        "To completely discard old beliefs with new information",
-        "To adjust the initial probability based on new evidence",
-        "To prove that the initial belief was incorrect",
-        "To assume new data is unrelated to the initial assumption"
+        "Yes, because a positive test result confirms the disease with high accuracy",
+        "No, because the rarity of the disease means the probability of a false positive could still be high",
+        "Yes, because the test’s accuracy is high enough to trust the result without additional context",
+        "No, because all positive tests are likely to be incorrect due to the rarity of the disease"
       ],
-      "answer": "To adjust the initial probability based on new evidence"
+      "answer": "No, because the rarity of the disease means the probability of a false positive could still be high"
     }
   ]
   
