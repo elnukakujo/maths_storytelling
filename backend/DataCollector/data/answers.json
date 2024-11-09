@@ -303,5 +303,66 @@
         }
       }
     ]
+  },
+  {
+    "Id": 5,
+    "Submissions": [
+      {
+        "ExerciseAnswers": {
+          "PreAnswers": {
+            "In Gradient Descent, what does the gradient tell us?": "The direction of the steepest ascent",
+            "What is the primary purpose of using Gradient Descent in optimization?": "To find the steepest uphill path to maximize a function",
+            "In training a model, imagine you\u2019re adjusting its settings to improve its performance, like adjusting knobs to make a radio sound clearer. When you turn a knob and hear a clearer sound, you keep turning in that direction. How is this process similar to using gradients in optimizing a model?": "It\u2019s similar because each adjustment moves in the direction that improves performance the most",
+            "What does it mean when the gradient is zero?": "The function is at a flat point or minimum",
+            "What is the purpose of taking small, iterative steps in Gradient Descent?": "To accurately follow the function\u0027s steepest incline"
+          },
+          "PostAnswers": {
+            "What is the primary purpose of using Gradient Descent in optimization?": "To iteratively move towards the lowest point of a function",
+            "In Gradient Descent, what does the gradient tell us?": "The distance to the function\u0027s minimum point",
+            "What does it mean when the gradient is zero?": "The function has reached a maximum",
+            "In training a model, imagine you\u2019re adjusting its settings to improve its performance, like adjusting knobs to make a radio sound clearer. When you turn a knob and hear a clearer sound, you keep turning in that direction. How is this process similar to using gradients in optimizing a model?": "It\u2019s different because turning knobs doesn\u2019t provide feedback on the best direction",
+            "What is the purpose of taking small, iterative steps in Gradient Descent?": "To accurately follow the function\u0027s steepest incline"
+          }
+        },
+        "SurveyAnswers": {
+          "The storytelling style made the mathematical concept more appealing": "5",
+          "The story felt well written": "5",
+          "The story motivated me to learn more about this mathematical concept": "4",
+          "I feel confident that I could explain the concept to someone else": "4",
+          "The story focused more on teaching the math concept than on being an engaging story": "5",
+          "I felt more confident in my understanding of the concept after reading the story": "4",
+          "I would recommend this story format for learning similar concepts": "6",
+          "The story was interesting and engaging": "6"
+        }
+      },
+      {
+        "ExerciseAnswers": {
+          "PreAnswers": {
+            "What is the importance of starting with a belief or an assumption?": "It provides a baseline that can be refined with new data",
+            "What is the main goal of using Bayes\u0027 theorem?": "Not sure",
+            "An environmental scientist believes that a certain region has a low risk of earthquakes based on historical data. Recently, a few small earthquakes have been detected in the area. Should the scientist start to think differently about the earthquake risk in this region? Why or why not?": "Yes, because recent events suggest that the risk might be higher than previously thought",
+            "How does observing additional outcomes, like drawing marbles or analyzing purchases, impact beliefs in the Bayesian approach?": "Not sure",
+            "Imagine a doctor is reviewing test results for a rare disease. The test is accurate 95% of the time but also produces false positives 5% of the time. If the disease is very rare in the general population, should the doctor immediately assume a positive test means the patient likely has the disease? Why or why not?": "Yes, because the test\u2019s accuracy is high enough to trust the result without additional context"
+          },
+          "PostAnswers": {
+            "What is the main goal of using Bayes\u0027 theorem?": "To calculate the average of all outcomes",
+            "What is the importance of starting with a belief or an assumption?": "It provides a baseline that can be refined with new data",
+            "An environmental scientist believes that a certain region has a low risk of earthquakes based on historical data. Recently, a few small earthquakes have been detected in the area. Should the scientist start to think differently about the earthquake risk in this region? Why or why not?": "Yes, because recent events suggest that the risk might be higher than previously thought",
+            "How does observing additional outcomes, like drawing marbles or analyzing purchases, impact beliefs in the Bayesian approach?": "Each outcome provides more evidence, refining the probability",
+            "Imagine a doctor is reviewing test results for a rare disease. The test is accurate 95% of the time but also produces false positives 5% of the time. If the disease is very rare in the general population, should the doctor immediately assume a positive test means the patient likely has the disease? Why or why not?": "Yes, because a positive test result confirms the disease with high accuracy"
+          }
+        },
+        "SurveyAnswers": {
+          "The storytelling style made the mathematical concept more appealing": "7",
+          "The story was interesting and engaging": "7",
+          "The story felt well written": "7",
+          "The story motivated me to learn more about this mathematical concept": "6",
+          "I feel confident that I could explain the concept to someone else": "2",
+          "The story focused more on teaching the math concept than on being an engaging story": "3",
+          "I felt more confident in my understanding of the concept after reading the story": "5",
+          "I would recommend this story format for learning similar concepts": "6"
+        }
+      }
+    ]
   }
 ]
