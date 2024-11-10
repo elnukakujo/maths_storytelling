@@ -25,4 +25,4 @@ In the terminal, go to backend/DataController and enter `dotnet run`
 - Also, keep in mind that every GetData call to the api (in the frontend, done right when exiting the Consent.js page) will add +1 to the combinationIdx.
 - If the combinationIdx reaches the maximum length of Combinations list, the api will return an error.
 
-## Current index: 8
+## Current index: 9
