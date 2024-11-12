@@ -1,5 +1,5 @@
 # LLM_maths_storytelling
-Empirical Study on Teaching Math through Storytelling between LLMs and Humans on a student population
+Empirical Study on Teaching Math through Storytelling between LLMs and Humans on a Student Population
 
 ## Maths Concepts
 - We are using Bayes Probability and Gradient Descent for this comparison. Each has stories from different sources, bearing the name of the LLM creators (0: ChatGPT, 1: LLama3.2-3B-Instruct) or anonymized humans.
@@ -25,4 +25,4 @@ In the terminal, go to backend/DataController and enter `dotnet run`
 - Also, keep in mind that every GetData call to the api (in the frontend, done right when exiting the Consent.js page) will add +1 to the combinationIdx.
 - If the combinationIdx reaches the maximum length of Combinations list, the api will return an error.
 
-## Current index: 10
+## Current index: 11
