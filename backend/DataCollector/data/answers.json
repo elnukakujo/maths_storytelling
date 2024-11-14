@@ -731,3 +731,65 @@
     ]
   }
 ]
+{
+    "Id": 12,
+    "Submissions": [
+      {
+        "ExerciseAnswers": {
+          "PreAnswers": {
+            "What is the main goal of using Bayes\u0027 theorem?": "To calculate the median of all probabilities",
+            "What is the importance of starting with a belief or an assumption?": "It provides a baseline that can be refined with new data",
+            "An environmental scientist believes that a certain region has a low risk of earthquakes based on historical data. Recently, a few small earthquakes have been detected in the area. Should the scientist start to think differently about the earthquake risk in this region? Why or why not?": "Yes, because any recent change should drastically adjust initial assumptions",
+            "How does observing additional outcomes, like drawing marbles or analyzing purchases, impact beliefs in the Bayesian approach?": "Each outcome provides more evidence, refining the probability",
+            "Imagine a doctor is reviewing test results for a rare disease. The test is accurate 95% of the time but also produces false positives 5% of the time. If the disease is very rare in the general population, should the doctor immediately assume a positive test means the patient likely has the disease? Why or why not?": "No, because the rarity of the disease means the probability of a false positive could still be high"
+          },
+          "PostAnswers": {
+            "What is the main goal of using Bayes\u0027 theorem?": "To incorporate new evidence and update initial assumptions",
+            "What is the importance of starting with a belief or an assumption?": "It provides a baseline that can be refined with new data",
+            "An environmental scientist believes that a certain region has a low risk of earthquakes based on historical data. Recently, a few small earthquakes have been detected in the area. Should the scientist start to think differently about the earthquake risk in this region? Why or why not?": "Yes, because any recent change should drastically adjust initial assumptions",
+            "How does observing additional outcomes, like drawing marbles or analyzing purchases, impact beliefs in the Bayesian approach?": "Each outcome provides more evidence, refining the probability",
+            "Imagine a doctor is reviewing test results for a rare disease. The test is accurate 95% of the time but also produces false positives 5% of the time. If the disease is very rare in the general population, should the doctor immediately assume a positive test means the patient likely has the disease? Why or why not?": "Yes, because a positive test result confirms the disease with high accuracy"
+          }
+        },
+        "SurveyAnswers": {
+          "The story was interesting and engaging": "6",
+          "The storytelling style made the mathematical concept more appealing": "4",
+          "The story felt well written": "5",
+          "The story motivated me to learn more about this mathematical concept": "4",
+          "I feel confident that I could explain the concept to someone else": "5",
+          "The story focused more on teaching the math concept than on being an engaging story": "4",
+          "I felt more confident in my understanding of the concept after reading the story": "6",
+          "I would recommend this story format for learning similar concepts": "5"
+        }
+      },
+      {
+        "ExerciseAnswers": {
+          "PreAnswers": {
+            "What is the primary purpose of using Gradient Descent in optimization?": "To iteratively move towards the lowest point of a function",
+            "In Gradient Descent, what does the gradient tell us?": "The distance to the function\u0027s minimum point",
+            "In training a model, imagine you\u2019re adjusting its settings to improve its performance, like adjusting knobs to make a radio sound clearer. When you turn a knob and hear a clearer sound, you keep turning in that direction. How is this process similar to using gradients in optimizing a model?": "It\u2019s similar because each adjustment moves in the direction that improves performance the most",
+            "What does it mean when the gradient is zero?": "The function has been reset to the starting point",
+            "What is the purpose of taking small, iterative steps in Gradient Descent?": "To accurately follow the function\u0027s steepest incline"
+          },
+          "PostAnswers": {
+            "What is the primary purpose of using Gradient Descent in optimization?": "To find the steepest uphill path to maximize a function",
+            "In Gradient Descent, what does the gradient tell us?": "The function\u0027s highest possible value",
+            "In training a model, imagine you\u2019re adjusting its settings to improve its performance, like adjusting knobs to make a radio sound clearer. When you turn a knob and hear a clearer sound, you keep turning in that direction. How is this process similar to using gradients in optimizing a model?": "It\u2019s similar because each adjustment goes directly to the final setting",
+            "What does it mean when the gradient is zero?": "The function has reached a maximum",
+            "What is the purpose of taking small, iterative steps in Gradient Descent?": "To move as quickly as possible towards the function\u0027s peak"
+          }
+        },
+        "SurveyAnswers": {
+          "The story was interesting and engaging": "7",
+          "The storytelling style made the mathematical concept more appealing": "6",
+          "The story felt well written": "5",
+          "The story motivated me to learn more about this mathematical concept": "5",
+          "I feel confident that I could explain the concept to someone else": "5",
+          "The story focused more on teaching the math concept than on being an engaging story": "5",
+          "I felt more confident in my understanding of the concept after reading the story": "4",
+          "I would recommend this story format for learning similar concepts": "6"
+        }
+      }
+    ]
+  }
+]
