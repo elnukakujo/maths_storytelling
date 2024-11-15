@@ -793,3 +793,65 @@
     ]
   }
 ]
+{
+    "Id": 13,
+    "Submissions": [
+      {
+        "ExerciseAnswers": {
+          "PreAnswers": {
+            "What is the main goal of using Bayes\u0027 theorem?": "Not sure",
+            "What is the importance of starting with a belief or an assumption?": "It allows one to ignore all new information",
+            "An environmental scientist believes that a certain region has a low risk of earthquakes based on historical data. Recently, a few small earthquakes have been detected in the area. Should the scientist start to think differently about the earthquake risk in this region? Why or why not?": "Yes, because any recent change should drastically adjust initial assumptions",
+            "How does observing additional outcomes, like drawing marbles or analyzing purchases, impact beliefs in the Bayesian approach?": "Not sure",
+            "Imagine a doctor is reviewing test results for a rare disease. The test is accurate 95% of the time but also produces false positives 5% of the time. If the disease is very rare in the general population, should the doctor immediately assume a positive test means the patient likely has the disease? Why or why not?": "No, because all positive tests are likely to be incorrect due to the rarity of the disease"
+          },
+          "PostAnswers": {
+            "What is the main goal of using Bayes\u0027 theorem?": "To incorporate new evidence and update initial assumptions",
+            "What is the importance of starting with a belief or an assumption?": "It allows one to ignore all new information",
+            "An environmental scientist believes that a certain region has a low risk of earthquakes based on historical data. Recently, a few small earthquakes have been detected in the area. Should the scientist start to think differently about the earthquake risk in this region? Why or why not?": "Yes, because any recent change should drastically adjust initial assumptions",
+            "How does observing additional outcomes, like drawing marbles or analyzing purchases, impact beliefs in the Bayesian approach?": "Each outcome resets the probability calculation",
+            "Imagine a doctor is reviewing test results for a rare disease. The test is accurate 95% of the time but also produces false positives 5% of the time. If the disease is very rare in the general population, should the doctor immediately assume a positive test means the patient likely has the disease? Why or why not?": "No, because the rarity of the disease means the probability of a false positive could still be high"
+          }
+        },
+        "SurveyAnswers": {
+          "The story was interesting and engaging": "7",
+          "The storytelling style made the mathematical concept more appealing": "7",
+          "The story felt well written": "7",
+          "The story motivated me to learn more about this mathematical concept": "7",
+          "I feel confident that I could explain the concept to someone else": "1",
+          "The story focused more on teaching the math concept than on being an engaging story": "7",
+          "I felt more confident in my understanding of the concept after reading the story": "7",
+          "I would recommend this story format for learning similar concepts": "7"
+        }
+      },
+      {
+        "ExerciseAnswers": {
+          "PreAnswers": {
+            "What is the primary purpose of using Gradient Descent in optimization?": "Not sure",
+            "In Gradient Descent, what does the gradient tell us?": "Not sure",
+            "In training a model, imagine you\u2019re adjusting its settings to improve its performance, like adjusting knobs to make a radio sound clearer. When you turn a knob and hear a clearer sound, you keep turning in that direction. How is this process similar to using gradients in optimizing a model?": "Not sure",
+            "What does it mean when the gradient is zero?": "Not sure",
+            "What is the purpose of taking small, iterative steps in Gradient Descent?": "Not sure"
+          },
+          "PostAnswers": {
+            "What is the primary purpose of using Gradient Descent in optimization?": "To find the middle point of a function\u0027s range",
+            "In Gradient Descent, what does the gradient tell us?": "The function\u0027s average rate of change",
+            "In training a model, imagine you\u2019re adjusting its settings to improve its performance, like adjusting knobs to make a radio sound clearer. When you turn a knob and hear a clearer sound, you keep turning in that direction. How is this process similar to using gradients in optimizing a model?": "Not sure",
+            "What does it mean when the gradient is zero?": "The function is at a flat point or minimum",
+            "What is the purpose of taking small, iterative steps in Gradient Descent?": "To accurately follow the function\u0027s steepest incline"
+          }
+        },
+        "SurveyAnswers": {
+          "The story was interesting and engaging": "4",
+          "The storytelling style made the mathematical concept more appealing": "4",
+          "The story felt well written": "6",
+          "The story motivated me to learn more about this mathematical concept": "4",
+          "I feel confident that I could explain the concept to someone else": "1",
+          "The story focused more on teaching the math concept than on being an engaging story": "6",
+          "I felt more confident in my understanding of the concept after reading the story": "6",
+          "I would recommend this story format for learning similar concepts": "7"
+        }
+      }
+    ]
+  }
+]
