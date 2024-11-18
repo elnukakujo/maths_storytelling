@@ -24,5 +24,3 @@ In the terminal, go to backend/DataController and enter `dotnet run`
 - If it is not the first participant, you need to run the backend, go to `http://127.0.0.1:5288/swagger/index.html` (Remember to change the port for your Dotnet app configuration), and set the combinationIdx by executing the SetIdx to define which combinations we are at.
 - Also, keep in mind that every GetData call to the api (in the frontend, done right when exiting the Consent.js page) will add +1 to the combinationIdx.
 - If the combinationIdx reaches the maximum length of Combinations list, the api will return an error.
-
-## Current index: 16
