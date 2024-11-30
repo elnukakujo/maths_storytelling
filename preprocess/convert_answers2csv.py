@@ -42,7 +42,7 @@ data["PreResults1"] = [result[0][0] for result in participant_results]
 data["PostResults1"] = [result[0][1] for result in participant_results]
 
 for key in likert1_results[0].keys():
-    data["Survey_"+ key + "1"] = [result[key] for result in likert1_results]
+    data["Survey_"+ key.replace(' ', '_') + "1"] = [result[key] for result in likert1_results]
 
 data["StoryScenario2"] = [combination[1][0] for combination in combinations]
 data["StoryAuthor2"] = [combination[1][1] for combination in combinations]
