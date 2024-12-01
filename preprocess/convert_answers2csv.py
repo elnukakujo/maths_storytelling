@@ -31,7 +31,7 @@ with open('exercise_results.json', 'r') as f:
 with open('../website/backend/DataCollector/data/answers.json', 'r') as f:
     answers_json = json.load(f)
     likert1_results = [participant["Submissions"][0]["SurveyAnswers"] for participant in answers_json]
-    likert2_results = [participant["Submissions"][0]["SurveyAnswers"] for participant in answers_json]
+    likert2_results = [participant["Submissions"][1]["SurveyAnswers"] for participant in answers_json]
 
 data = pd.DataFrame()
 data["Participant"] = [idx for idx in range(1, len(participant_results)+1)]
