@@ -1,0 +1,229 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(lme4)
+library(lmerTest)
+library(car)
+library(emmeans)
+library(ordinal)
+```
+
+## Preprocess
+
+```{r}
+df <- read.csv(file = "data.csv", header = TRUE, sep = ",", stringsAsFactors = FALSE) %>%
+  pivot_longer(
+    cols = starts_with("StoryScenario"),
+    names_to = "Order",
+    values_to = "StoryScenario"
+  ) %>%
+  mutate(StoryAuthor = case_when(
+    Order == "StoryScenario1" ~ StoryAuthor1,
+    Order == "StoryScenario2" ~ StoryAuthor2
+  )) %>%
+  mutate(PreResult = case_when(
+    Order == "StoryScenario1" ~ PreResults1,
+    Order == "StoryScenario2" ~ PreResults2
+  )) %>%
+  mutate(PostResult = case_when(
+    Order == "StoryScenario1" ~ PostResults1,
+    Order == "StoryScenario2" ~ PostResults2
+  )) %>%
+  mutate(Survey_The_story_was_interesting_and_engaging = case_when(
+    Order == "StoryScenario1" ~ Survey_The_story_was_interesting_and_engaging1,
+    Order == "StoryScenario2" ~ Survey_The_story_was_interesting_and_engaging2
+  )) %>%
+  mutate(Survey_The_storytelling_style_made_the_mathematical_concept_more_appealing = case_when(
+    Order == "StoryScenario1" ~ Survey_The_storytelling_style_made_the_mathematical_concept_more_appealing1,
+    Order == "StoryScenario2" ~ Survey_The_storytelling_style_made_the_mathematical_concept_more_appealing2
+  )) %>%
+  mutate(Survey_The_story_felt_well_written = case_when(
+    Order == "StoryScenario1" ~ Survey_The_story_felt_well_written1,
+    Order == "StoryScenario2" ~ Survey_The_story_felt_well_written2
+  )) %>%
+  mutate(Survey_The_story_motivated_me_to_learn_more_about_this_mathematical_concept = case_when(
+    Order == "StoryScenario1" ~ Survey_The_story_motivated_me_to_learn_more_about_this_mathematical_concept1,
+    Order == "StoryScenario2" ~ Survey_The_story_motivated_me_to_learn_more_about_this_mathematical_concept2
+  )) %>%
+  mutate(Survey_I_feel_confident_that_I_could_explain_the_concept_to_someone_else = case_when(
+    Order == "StoryScenario1" ~ Survey_I_feel_confident_that_I_could_explain_the_concept_to_someone_else1,
+    Order == "StoryScenario2" ~ Survey_I_feel_confident_that_I_could_explain_the_concept_to_someone_else2
+  )) %>%
+  mutate(Survey_I_felt_more_confident_in_my_understanding_of_the_concept_after_reading_the_story = case_when(
+    Order == "StoryScenario1" ~ Survey_I_felt_more_confident_in_my_understanding_of_the_concept_after_reading_the_story1,
+    Order == "StoryScenario2" ~ Survey_I_felt_more_confident_in_my_understanding_of_the_concept_after_reading_the_story2
+  )) %>%
+  mutate(Survey_I_would_recommend_this_story_format_for_learning_similar_concepts = case_when(
+    Order == "StoryScenario1" ~ Survey_I_would_recommend_this_story_format_for_learning_similar_concepts1,
+    Order == "StoryScenario2" ~ Survey_I_would_recommend_this_story_format_for_learning_similar_concepts2
+  )) %>%
+  mutate(Survey_The_story_focused_more_on_teaching_the_math_concept_than_on_being_an_engaging_story = case_when(
+    Order == "StoryScenario1" ~ Survey_The_story_focused_more_on_teaching_the_math_concept_than_on_being_an_engaging_story1,
+    Order == "StoryScenario2" ~ Survey_The_story_focused_more_on_teaching_the_math_concept_than_on_being_an_engaging_story2
+  )) %>%
+  select(Participant, StoryScenario, StoryAuthor, Order, PreResult, PostResult, Survey_The_story_was_interesting_and_engaging, Survey_The_storytelling_style_made_the_mathematical_concept_more_appealing, Survey_The_story_felt_well_written, Survey_The_story_motivated_me_to_learn_more_about_this_mathematical_concept, Survey_I_feel_confident_that_I_could_explain_the_concept_to_someone_else, Survey_I_felt_more_confident_in_my_understanding_of_the_concept_after_reading_the_story, Survey_I_would_recommend_this_story_format_for_learning_similar_concepts, Survey_The_story_focused_more_on_teaching_the_math_concept_than_on_being_an_engaging_story)
+
+df$Participant <- factor(df$Participant)
+df$StoryScenario <- factor(df$StoryScenario)
+df$StoryAuthor <- factor(df$StoryAuthor)
+df$Order <- factor(gsub("[^0-9]", "", df$Order))
+df$PreResult <- as.integer(df$PreResult)
+df$PostResult <- as.integer(df$PostResult)
+df$ResultDiff <- as.numeric(df$PostResult - df$PreResult)
+
+survey_median <- as.integer(apply(df[,grep("Survey", colnames(df))],1,median))
+
+df <- df %>%
+  select(-matches("Survey"), -PostResult)
+
+df$Survey_median <- survey_median
+
+head(df)
+```
+
+## Box Plots of PreResult, ResultDiff and Survey_median across parameters
+
+#### PreResult
+
+```{r}
+ggplot(df, aes(x = Order, y = PreResult, fill = Order)) +
+  geom_boxplot() +
+  facet_wrap(~ StoryScenario) + # Facet by StoryScenario
+  labs(title = "PreResult by StoryScenario and Order",
+    x = "Order",
+    y = "PreResult") +
+  theme_minimal() +
+  theme(legend.position = "none")
+```
+
+
+#### ResultDiff and Survey_median
+
+##### StoryAuthor and StoryScenario
+
+```{r}
+ggplot(df, aes(x = StoryScenario, y = ResultDiff, fill = StoryScenario)) +
+  geom_boxplot() +
+  facet_wrap(~ StoryAuthor) + # Facet by StoryAuthor
+  labs(title = "ResultDiff by StoryAuthor and StoryScenario",
+    x = "StoryScenario",
+    y = "ResultDiff") +
+  theme_minimal() +
+  theme(legend.position = "none")
+
+ggplot(df, aes(x = StoryScenario, y = Survey_median, fill = StoryScenario)) +
+  geom_boxplot() +
+  facet_wrap(~ StoryAuthor) + # Facet by StoryAuthor
+  labs(title = "Survey_median by StoryAuthor and StoryScenario",
+    x = "StoryScenario",
+    y = "Survey_median") +
+  theme_minimal() +
+  theme(legend.position = "none")
+```
+
+##### StoryAuthor and Order
+
+```{r}
+ggplot(df, aes(x = Order, y = ResultDiff, fill = Order)) +
+  geom_boxplot() +
+  facet_wrap(~ StoryAuthor) + # Facet by StoryAuthor
+  labs(title = "ResultDiff by StoryAuthor and Order",
+    x = "Order",
+    y = "ResultDiff") +
+  theme_minimal() +
+  theme(legend.position = "none")
+
+ggplot(df, aes(x = Order, y = Survey_median, fill = Order)) +
+  geom_boxplot() +
+  facet_wrap(~ StoryAuthor) + # Facet by StoryAuthor
+  labs(title = "Survey_median by StoryAuthor and Order",
+    x = "Order",
+    y = "Survey_median") +
+  theme_minimal() +
+  theme(legend.position = "none")
+```
+
+We run LMM due to the split plot design resulting in missing data per participants.
+
+### Analysis
+
+#### PreResult LMM
+```{r}
+pre_result_lmm <- lmer(PreResult ~ StoryScenario * Order + (1|Participant), data = df)
+summary(pre_result_lmm)
+print("-------------------------------")
+
+qqnorm(residuals(pre_result_lmm))
+qqline(residuals(pre_result_lmm), col = "red") 
+
+leveneTest(residuals(pre_result_lmm) ~ StoryScenario * Order, data=df)
+print("-------------------------------")
+
+anova(pre_result_lmm)
+print("-------------------------------")
+
+print("StoryScenario")
+emmeans(pre_result_lmm, pairwise ~ StoryScenario)$contrasts
+print("Order")
+emmeans(pre_result_lmm, pairwise ~ Order)$contrasts
+print("StoryScenario | Order")
+emmeans(pre_result_lmm, pairwise ~ StoryScenario | Order)$contrasts
+```
+
+#### ResultDiff Anova
+
+```{r}
+library(lme4)
+library(lmerTest)
+library(car)
+library(emmeans)
+
+result_lmm <- lmer(ResultDiff ~ StoryAuthor * StoryScenario * Order + (1 | Participant), data = df)
+summary(result_lmm)
+print("------------------------")
+
+qqnorm(residuals(result_lmm))
+qqline(residuals(result_lmm), col = "red") 
+
+leveneTest(residuals(result_lmm) ~ StoryAuthor * StoryScenario * Order, data=df)
+print("------------------------")
+
+print("StoryAuthor")
+emmeans(result_lmm, pairwise ~ StoryAuthor)$contrasts
+print("StoryScenario")
+emmeans(result_lmm, pairwise ~ StoryScenario)$contrasts
+print("StoryScenario | StoryAuthor")
+emmeans(result_lmm, pairwise ~ StoryAuthor | StoryScenario)$contrasts
+print("Order | StoryAuthor")
+emmeans(result_lmm, pairwise ~ Order | StoryAuthor)$contrasts
+```
+
+#### Survey_median LMM
+
+```{r}
+survey_lmm <- lmer(Survey_median ~ StoryAuthor + StoryScenario + Order + (1|Participant), data = df)
+summary(survey_lmm)
+print("-------------------------------")
+
+qqnorm(residuals(survey_lmm))
+qqline(residuals(survey_lmm), col = "red") 
+
+leveneTest(residuals(survey_lmm) ~ StoryAuthor * StoryScenario * Order, data=df)
+print("-------------------------------")
+
+anova(survey_lmm)
+print("-------------------------------")
+
+print("StoryAuthor")
+emmeans(survey_lmm, pairwise ~ StoryAuthor)$contrasts
+print("StoryScenario | StoryAuthor")
+emmeans(survey_lmm, pairwise ~ StoryScenario | StoryAuthor)$contrasts
+print("Order | StoryAuthor")
+emmeans(survey_lmm, pairwise ~ Order | StoryAuthor)$contrasts
+```

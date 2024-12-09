@@ -1,0 +1,17 @@
+Participant,StoryScenario1,StoryAuthor1,PreResults1,PostResults1,Survey_The_story_was_interesting_and_engaging1,Survey_The_storytelling_style_made_the_mathematical_concept_more_appealing1,Survey_The_story_felt_well_written1,Survey_The_story_motivated_me_to_learn_more_about_this_mathematical_concept1,Survey_I_feel_confident_that_I_could_explain_the_concept_to_someone_else1,Survey_I_felt_more_confident_in_my_understanding_of_the_concept_after_reading_the_story1,Survey_I_would_recommend_this_story_format_for_learning_similar_concepts1,Survey_The_story_focused_more_on_teaching_the_math_concept_than_on_being_an_engaging_story1,StoryScenario2,StoryAuthor2,PreResults2,PostResults2,Survey_The_story_was_interesting_and_engaging2,Survey_The_storytelling_style_made_the_mathematical_concept_more_appealing2,Survey_The_story_felt_well_written2,Survey_The_story_motivated_me_to_learn_more_about_this_mathematical_concept2,Survey_I_feel_confident_that_I_could_explain_the_concept_to_someone_else2,Survey_The_story_focused_more_on_teaching_the_math_concept_than_on_being_an_engaging_story2,Survey_I_felt_more_confident_in_my_understanding_of_the_concept_after_reading_the_story2,Survey_I_would_recommend_this_story_format_for_learning_similar_concepts2
+1,bayes,Human,2,4,4,6,5,4,4,6,5,5,gradient,LLM,4,5,6,6,6,4,5,4,6,6
+2,bayes,Human,3,3,6,6,3,4,5,4,2,5,gradient,LLM,2,4,5,6,4,4,3,4,3,5
+3,bayes,Human,2,3,4,4,3,4,4,5,4,5,gradient,LLM,0,4,5,5,6,6,6,5,6,5
+4,bayes,Human,1,4,5,6,4,3,6,7,5,2,gradient,LLM,4,4,4,6,6,3,7,5,2,7
+5,gradient,Human,5,2,5,6,4,5,6,3,5,6,bayes,LLM,4,4,5,6,5,5,6,7,6,6
+6,gradient,Human,3,1,6,5,5,4,4,4,6,5,bayes,LLM,2,3,7,7,7,6,2,3,5,6
+7,gradient,Human,3,4,5,6,5,6,5,5,6,4,bayes,LLM,3,4,6,6,6,7,4,3,6,6
+8,gradient,Human,2,2,5,6,5,5,4,5,6,5,bayes,LLM,3,4,7,7,7,7,6,6,7,7
+9,gradient,LLM,1,3,7,4,6,2,1,4,5,2,bayes,Human,0,1,4,4,3,5,3,6,6,6
+10,gradient,LLM,1,3,7,7,4,3,3,6,7,7,bayes,Human,1,5,7,7,6,7,5,6,6,7
+11,gradient,LLM,4,4,7,7,6,7,6,6,6,5,bayes,Human,4,4,7,6,3,5,3,3,5,7
+12,gradient,LLM,2,5,7,7,7,7,6,6,7,5,bayes,Human,4,4,6,6,7,7,6,7,6,7
+13,bayes,LLM,3,3,6,4,5,4,5,6,5,4,gradient,Human,2,0,7,6,5,5,5,5,4,6
+14,bayes,LLM,0,2,7,7,7,7,1,7,7,7,gradient,Human,0,1,4,4,6,4,1,6,6,7
+15,bayes,LLM,1,4,5,5,6,7,5,7,7,5,gradient,Human,0,3,4,5,2,4,3,7,4,5
+16,bayes,LLM,3,3,7,7,7,7,6,7,7,7,gradient,Human,3,5,7,7,7,7,7,7,7,7
